@@ -1,17 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useRef } from "react";
+import { useState } from "react";
 import "./App.css";
-import QueryTest from "./QueryTest";
+import CityInput from "./CityInput";
+import QueryTest from "./ForecastForCity";
 
 function App() {
-  const parentRef = useRef(null);
+  const [cityName, setCityName] = useState<string[]>([]);
 
   return (
     <>
       <h1 className="font-bold">Hello World</h1>
-      {/* <button onClick={() => getData()}>Send request</button> */}
-
-      <QueryTest ref={parentRef} />
+      <CityInput addCity={setCityName} />
+      <div>
+        {cityName.map((city) => (
+          <QueryTest key={city} city={city} />
+        ))}
+      </div>
     </>
   );
 }
