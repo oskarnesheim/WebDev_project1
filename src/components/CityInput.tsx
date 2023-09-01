@@ -3,14 +3,18 @@ import React, { useState } from "react";
 
 type CityInputProps = {
   addCity: React.Dispatch<React.SetStateAction<string[]>>;
+  cities: string[];
 };
 
-function CityInput({ addCity }: CityInputProps) {
+function CityInput({ addCity, cities }: CityInputProps) {
   const [cityName, setCityName] = useState<string>("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    addCity((prev) => [...prev, cityName]);
+    if (!cities.includes(cityName)) {
+      addCity((prev) => [...prev, cityName]);
+    }
+    setCityName("");
   };
 
   return (

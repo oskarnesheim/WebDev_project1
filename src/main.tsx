@@ -4,11 +4,15 @@ import App from "./App.tsx";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { RouterProvider, createHashRouter } from "react-router-dom";
-import ErrorPage from "./ErrorPage.tsx";
-import SearchForCity from "./SearchForCity.tsx";
-import MyCities from "./MyCities.tsx";
-import City from "./City.tsx";
+import {
+  RouterProvider,
+  createHashRouter,
+  useLocation,
+} from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage.tsx";
+import Home from "./components/Home.tsx";
+import MyCities from "./pages/MyCities.tsx";
+import City from "./pages/City.tsx";
 const queryClient = new QueryClient();
 const router = createHashRouter([
   {
@@ -18,7 +22,7 @@ const router = createHashRouter([
     children: [
       {
         path: "",
-        element: <SearchForCity />,
+        element: <Home />,
       },
       {
         path: "my_cities",

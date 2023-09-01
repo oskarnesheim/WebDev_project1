@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import "./App.css";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <div className="ml-60">
+        <Outlet />
+      </div>
     </>
   );
 }
