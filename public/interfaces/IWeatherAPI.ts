@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 interface Location {
   name: string;
   region: string;
@@ -53,9 +54,17 @@ interface CurrentWeather {
   air_quality: AirQuality;
 }
 
-interface IWeatherData {
+interface ICurrentWeatherData {
   location: Location;
   current: CurrentWeather;
 }
 
-export default IWeatherData ;
+interface IWeatherForeCastData{
+  location: Location;
+  current: CurrentWeather;
+  
+}
+
+
+
+export default ICurrentWeatherData ;

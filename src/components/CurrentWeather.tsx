@@ -2,17 +2,21 @@
 import { useQuery } from "@tanstack/react-query";
 import "../../public/interfaces/IWeatherAPI";
 import { useNavigate } from "react-router-dom";
-import getWeather from "../functions/GetWeather";
+import getCurrent from "../functions/GetCurrent";
+import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
 
-type QueryTestProps = {
+type CurrentWeatherProps = {
   city: string;
 };
 
-function ForecastForCity({ city }: QueryTestProps) {
+function CurrentWeather({ city }: CurrentWeatherProps) {
   const navigate = useNavigate();
-  const { isLoading, isError, data } = useQuery({
+  const { isLoading, isError, data, error } = useQuery<
+    ICurrentWeatherData,
+    Error
+  >({
     queryKey: [city],
-    queryFn: () => getWeather(city),
+    queryFn: () => getCurrent(city),
   });
 
   function goToCity(city: string) {
@@ -23,7 +27,7 @@ function ForecastForCity({ city }: QueryTestProps) {
     return <div>Loading</div>;
   }
   if (isError) {
-    return <div>Error</div>;
+    return <div>Error... {error.message}</div>;
   }
 
   return (
@@ -36,4 +40,4 @@ function ForecastForCity({ city }: QueryTestProps) {
   );
 }
 
-export default ForecastForCity;
+export default CurrentWeather;
