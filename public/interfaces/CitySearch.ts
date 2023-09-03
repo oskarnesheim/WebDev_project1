@@ -1,4 +1,4 @@
-interface City {
+interface ICity {
   id: number;
   name: string;
   region: string;
@@ -8,4 +8,4 @@ interface City {
   url: string;
 }
 
-export default City;
+export default ICity;

@@ -1,34 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
-
 type CityInputProps = {
-  addCity: React.Dispatch<React.SetStateAction<string[]>>;
-  cities: string[];
+  updateSearch: React.Dispatch<React.SetStateAction<string>>;
+  currentSearch: string;
 };
 
-function CityInput({ addCity, cities }: CityInputProps) {
-  const [cityName, setCityName] = useState<string>("");
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!cities.includes(cityName)) {
-      addCity((prev) => [...prev, cityName]);
-    }
-    setCityName("");
-  };
-
+function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <label htmlFor="cityName">Enter City Name:</label>
       <input
         type="text"
         id="cityName"
-        value={cityName}
-        onChange={(event) => setCityName(event.target.value)}
+        value={currentSearch}
+        onChange={(event) => updateSearch(event.target.value)}
         placeholder="E.g., New York"
         required
       />
-      <button type="submit">Submit</button>
     </form>
   );
 }
