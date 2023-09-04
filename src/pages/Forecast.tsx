@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useNavigate, useParams } from "react-router-dom";
-import getForecast from "../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
-import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
+import { IWeatherForeCastData } from "../../public/interfaces/Forecast";
+import getCurrent from "../functions/GetCurrent";
 
 type ForecastProps = {
   city: string;
@@ -12,10 +10,36 @@ type ForecastProps = {
 };
 
 function Forecast({ city }: ForecastProps) {
-  // const { city } = useParams();
+  const { isLoading, isError, data, error } = useQuery<
+    IWeatherForeCastData,
+    Error
+  >({
+    queryKey: [city],
+    queryFn: () => getCurrent(city),
+  });
+  if (isLoading) {
+    return <div>Loading... ...</div>;
+  }
+  if (isError) {
+    return <div>We found this error... {error.message}</div>;
+  }
+
   return (
     <div>
-      <h2>This is the forcast for {city}</h2>
+      <div>{data.location.name}</div>
+      <div>{data.location.country}</div>
+      <div>{data.location.region}</div>
+      <div>{data.current.humidity}</div>
+      <div>
+        {data.forecast.forecastday.map((e) => {
+          return <div>{e.date}</div>;
+        })}
+      </div>
+      <div>
+        {data.alerts.map((e) => {
+          return <div>{e.alert}</div>;
+        })}
+      </div>
     </div>
   );
 }

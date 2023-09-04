@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery } from "@tanstack/react-query";
 import getCurrent from "../functions/GetCurrent";
-import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
+import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 
 type CityInfoProps = {
   city: string;

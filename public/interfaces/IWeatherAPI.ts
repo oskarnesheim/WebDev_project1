@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-interface Location {
+export interface location {
   name: string;
   region: string;
   country: string;
@@ -10,30 +10,30 @@ interface Location {
   localtime: string;
 }
 
-interface Condition {
+interface condition {
   text: string;
   icon: string;
   code: number;
 }
 
-interface AirQuality {
+interface air_quality {
   co: number;
   no2: number;
   o3: number;
   so2: number;
   pm2_5: number;
   pm10: number;
-  'us-epa-index': number;
-  'gb-defra-index': number;
+  us_epa_index: number;
+  gb_defra_index: number;
 }
 
-interface CurrentWeather {
+export interface current {
   last_updated_epoch: number;
   last_updated: string;
   temp_c: number;
   temp_f: number;
   is_day: number;
-  condition: Condition;
+  condition: condition;
   wind_mph: number;
   wind_kph: number;
   wind_degree: number;
@@ -51,20 +51,10 @@ interface CurrentWeather {
   uv: number;
   gust_mph: number;
   gust_kph: number;
-  air_quality: AirQuality;
+  air_quality: air_quality;
 }
 
-interface ICurrentWeatherData {
-  location: Location;
-  current: CurrentWeather;
+export interface ICurrentWeatherData {
+  location: location;
+  current: current;
 }
-
-interface IWeatherForeCastData{
-  location: Location;
-  current: CurrentWeather;
-  
-}
-
-
-
-export default ICurrentWeatherData ;
