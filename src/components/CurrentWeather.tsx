@@ -1,16 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery } from "@tanstack/react-query";
-import "../../public/interfaces/IWeatherAPI";
-import { useNavigate } from "react-router-dom";
 import getCurrent from "../functions/GetCurrent";
 import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
 
-type CurrentWeatherProps = {
+type CityInfoProps = {
   city: string;
 };
 
-function CurrentWeather({ city }: CurrentWeatherProps) {
-  const navigate = useNavigate();
+export default function CurrentWeather({ city }: CityInfoProps) {
   const { isLoading, isError, data, error } = useQuery<
     ICurrentWeatherData,
     Error
@@ -18,20 +15,15 @@ function CurrentWeather({ city }: CurrentWeatherProps) {
     queryKey: [city],
     queryFn: () => getCurrent(city),
   });
-
-  function goToCity(city: string) {
-    navigate(city);
-  }
-
   if (isLoading) {
-    return <div>Loading</div>;
+    return <div>Loading... ...</div>;
   }
   if (isError) {
-    return <div>Error... {error.message}</div>;
+    return <div>We found this error... {error.message}</div>;
   }
 
   return (
-    <div onClick={() => goToCity(city)}>
+    <div>
       <div>{data.location.name}</div>
       <div>{data.location.country}</div>
       <div>{data.location.region}</div>
@@ -39,5 +31,3 @@ function CurrentWeather({ city }: CurrentWeatherProps) {
     </div>
   );
 }
-
-export default CurrentWeather;

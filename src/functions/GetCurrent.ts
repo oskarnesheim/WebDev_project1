@@ -12,7 +12,6 @@ async function getData(API_request:string): Promise<ICurrentWeatherData> {
   }
 
   function getCurrent(city: string) {
-    console.log(city)
     const WEATHER_REQUEST =
     "http://api.weatherapi.com/v1/current.json?key=1413dd12c034448e8e894125230109&q=" +
     city +

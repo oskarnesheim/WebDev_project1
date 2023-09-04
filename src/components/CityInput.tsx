@@ -6,7 +6,7 @@ type CityInputProps = {
 
 function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
-    <form>
+    <div className="my-5">
       <label htmlFor="cityName">Enter City Name:</label>
       <input
         type="text"
@@ -16,7 +16,7 @@ function CityInput({ updateSearch, currentSearch }: CityInputProps) {
         placeholder="E.g., New York"
         required
       />
-    </form>
+    </div>
   );
 }
 

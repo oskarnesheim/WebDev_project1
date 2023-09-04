@@ -1,32 +1,45 @@
-import { useParams } from "react-router-dom";
-import getCurrent from "../functions/GetCurrent";
-import { useQuery } from "@tanstack/react-query";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {
+  NavLink,
+  Outlet,
+  Route,
+  Routes,
+  useLoaderData,
+  useParams,
+} from "react-router-dom";
+import CurrentWeather from "../components/CurrentWeather";
+import { useState } from "react";
+import Forecast from "./Forecast";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-//! Denne siden funker dårlig
+
 function City() {
-  // const city = location.pathname.slice(1);
-  const { city } = useParams();
-  // * hvordan skal jeg få tak i city før useQuery kjøres?
+  const city: string = useLoaderData() as string;
   console.log(city);
-
-  const { isLoading, isError, data } = useQuery({
-    queryKey: [city],
-    queryFn: () => getCurrent("Asker"),
-  });
-  if (isLoading) {
-    return <div>Loading... ...</div>;
-  }
-  if (isError) {
-    return <div>Error</div>;
-  }
-
+  const [showCurrent, setShowCurrent] = useState(true);
   return (
     <div>
-      <div>{data.location.name}</div>
-      <div>{data.location.country}</div>
-      <div>{data.location.region}</div>
-      <div>{data.current.humidity}</div>
+      {/* <Routes>
+        <Route path={"current"} element={<CurrentWeather city={"Oslo"} />} />
+        <Route path={"forecast"} element={<CurrentWeather city={"Oslo"} />} />
+      </Routes> */}
+      {/* <nav>
+        <NavLink to="current">Current</NavLink>
+        <NavLink to="forecast">Forecast</NavLink>
+      </nav> */}
+      {city}
+      <div>
+        <button onClick={() => setShowCurrent(!showCurrent)}>
+          {showCurrent ? "Current" : "Forecast"}
+        </button>
+      </div>
+      <div className="show_details">
+        {showCurrent ? (
+          <CurrentWeather city={"Hong Kong"} />
+        ) : (
+          <Forecast city={city} />
+        )}
+      </div>
     </div>
   );
 }
