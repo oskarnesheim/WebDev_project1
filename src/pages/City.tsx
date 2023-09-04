@@ -29,13 +29,12 @@ function City() {
       </nav> */}
       {city}
       <div>
-        <button onClick={() => setShowCurrent(!showCurrent)}>
-          {showCurrent ? "Current" : "Forecast"}
-        </button>
+        <button onClick={() => setShowCurrent(false)}>Forecast</button>
+        <button onClick={() => setShowCurrent(true)}>Current</button>
       </div>
       <div className="show_details">
         {showCurrent ? (
-          <CurrentWeather city={"Hong Kong"} />
+          <CurrentWeather city={city} />
         ) : (
           <Forecast city={city} />
         )}
