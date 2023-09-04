@@ -16,6 +16,8 @@ import City from "./pages/City.tsx";
 import getCurrent from "./functions/GetCurrent.ts";
 import CurrentWeather from "./components/CurrentWeather.tsx";
 import Forecast from "./pages/Forecast.tsx";
+import Test from "./Test.tsx";
+import Test2 from "./Test2.tsx";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -33,29 +35,20 @@ const router = createBrowserRouter([
             loader: async ({ params }) => {
               return params.city;
             },
-            // children: [
-            //   {
-            //     path: "current",
-            //     element: <CurrentWeather />,
-            //   },
-            //   {
-            //     path: "forecast",
-            //     element: <Forecast />,
-            //   },
-            // ],
-            // loader: async ({ params }) => {
-            //   if (!params.city) {
-            //     return { data: null };
-            //   }
-            //   const data = await getCurrent(params.city);
-            //   return { data };
-            // },
           },
         ],
       },
       {
         path: "my_cities",
         element: <MyCities />,
+      },
+      {
+        path: "test",
+        element: <Test />,
+      },
+      {
+        path: "test2",
+        element: <Test2 />,
       },
     ],
   },

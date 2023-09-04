@@ -1,17 +1,20 @@
 import axios from "axios";
-import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
+import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 
-async function getData(API_request:string): Promise<ICurrentWeatherData> {
+async function getData(API_request:string): Promise<IWeatherForeCastData> {
     return await axios
       .get(API_request)
       .then((res) => res.data)
       .catch((err) => console.log(err));
   }
 
-  function getForecast(city: string, numberOfDays: number, airQuality: boolean, allerts: boolean) {
+  function getForecast(city: string) {
+    const numberOfDays = 10;
+    const airQuality = true;
+    const allerts = true;
     console.log(city)
     const WEATHER_REQUEST =
     "http://api.weatherapi.com/v1/forecast.json?key=1413dd12c034448e8e894125230109&q="+city+"&days="+numberOfDays+"&aqi="+airQuality+"&alerts="+allerts;

@@ -10,35 +10,40 @@ import {
 import CurrentWeather from "../components/CurrentWeather";
 import { useState } from "react";
 import Forecast from "./Forecast";
+import getCurrent from "../functions/GetCurrent";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 function City() {
   const city: string = useLoaderData() as string;
   console.log(city);
+  {
+    getCurrent(city).then((data) => {
+      console.log(data);
+    });
+  }
+  {
+    city;
+  }
   const [showCurrent, setShowCurrent] = useState(true);
+  const [showAny, setShowAny] = useState(false);
   return (
     <div>
-      {/* <Routes>
-        <Route path={"current"} element={<CurrentWeather city={"Oslo"} />} />
-        <Route path={"forecast"} element={<CurrentWeather city={"Oslo"} />} />
-      </Routes> */}
-      {/* <nav>
-        <NavLink to="current">Current</NavLink>
-        <NavLink to="forecast">Forecast</NavLink>
-      </nav> */}
       {city}
       <div>
         <button onClick={() => setShowCurrent(false)}>Forecast</button>
         <button onClick={() => setShowCurrent(true)}>Current</button>
+        <button onClick={() => setShowAny(!showAny)}>Any</button>
       </div>
-      <div className="show_details">
-        {showCurrent ? (
-          <CurrentWeather city={city} />
-        ) : (
-          <Forecast city={city} />
-        )}
-      </div>
+      {showAny && (
+        <div className="show_details">
+          {showCurrent ? (
+            <CurrentWeather city={city} />
+          ) : (
+            <Forecast city={city} />
+          )}
+        </div>
+      )}
     </div>
   );
 }

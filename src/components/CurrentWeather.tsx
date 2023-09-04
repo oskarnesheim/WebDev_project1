@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery } from "@tanstack/react-query";
 import getCurrent from "../functions/GetCurrent";
-import ICurrentWeatherData from "../../public/interfaces/IWeatherAPI";
+import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 
 type CityInfoProps = {
   city: string;
@@ -24,10 +25,12 @@ export default function CurrentWeather({ city }: CityInfoProps) {
 
   return (
     <div>
-      <div>{data.location.name}</div>
-      <div>{data.location.country}</div>
+      {/* <div>{data.location.name}</div>
       <div>{data.location.region}</div>
-      <div>{data.current.humidity}</div>
+      <div>{data.location.country}</div>
+      <div>
+        {data.current.temp_c}/{data.current.temp_f}
+      </div> */}
     </div>
   );
 }
