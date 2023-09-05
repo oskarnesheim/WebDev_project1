@@ -53,7 +53,7 @@ interface condition {
   text: string;
   icon: string;
   code: number;
-}
+} 
 
 interface air_quality {
   co: number;
@@ -77,7 +77,9 @@ interface alert {
 interface forecastday{
   date: string;
   date_epoch: number;
-  day: day[];
+  day: day;
+  astro: astro;
+  hour: hour[];
 }
 
 interface day {
