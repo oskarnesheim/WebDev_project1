@@ -4,9 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import getCurrent from "../functions/GetCurrent";
 import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 export default function CurrentWeather() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
+  const [showAdvanced, setShowAdvanced] = useState(false);
 
   const { isLoading, isError, data, error } = useQuery<
     ICurrentWeatherData,
@@ -24,13 +26,39 @@ export default function CurrentWeather() {
 
   return (
     <div>
-      <div>{data.location.name}</div>
-      <div>{data.location.region}</div>
-      <div>{data.location.country}</div>
       <div>
-        {data.current.temp_c}/{data.current.temp_f}
+        <span className="location">
+          <h1 className="location-header">{data.location.name}</h1>
+          <p className="location-region">
+            {data.location.region}/{data.location.country}
+          </p>
+        </span>
+        <div>
+          {data.current.temp_c} C /{data.current.temp_f} F
+          <img src={data.current.condition.icon} alt="" />
+        </div>
+        <button onClick={() => setShowAdvanced(!showAdvanced)}>
+          {showAdvanced ? "Hide" : "Show"}
+        </button>
       </div>
-      <div>{data.current.wind_dir}</div>
+      {showAdvanced && (
+        <div>
+          <div>
+            Direction: {data.current.wind_dir} - {data.current.wind_kph} Kph/
+            {data.current.wind_mph} Mph
+          </div>
+          <div>
+            Humidity: {data.current.humidity}%
+            <br />
+            Cloud: {data.current.cloud}%
+            <br />
+            Feels like: {data.current.feelslike_c} C /{" "}
+            {data.current.feelslike_f} F
+            <br />
+            UV: {data.current.uv}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
