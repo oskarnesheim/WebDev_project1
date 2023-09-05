@@ -48,10 +48,14 @@ export default function Test2() {
       <h2>This is the forcast for {data.location.name}</h2>
       <div>
         {data.forecast.forecastday.map((day) => {
-          return <p key={day.date_epoch}>{day.date}</p>;
+          return (
+            <div key={day.date_epoch}>
+              {day.date}
+              <div></div>
+            </div>
+          );
         })}
       </div>
     </div>
   );
-  return <div>Test2</div>;
 }
