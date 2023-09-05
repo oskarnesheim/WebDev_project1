@@ -15,7 +15,6 @@ async function getData(API_request:string): Promise<IWeatherForeCastData> {
     const numberOfDays = 10;
     const airQuality = true;
     const allerts = true;
-    console.log(city)
     const WEATHER_REQUEST =
     "http://api.weatherapi.com/v1/forecast.json?key=1413dd12c034448e8e894125230109&q="+city+"&days="+numberOfDays+"&aqi="+airQuality+"&alerts="+allerts;
 
