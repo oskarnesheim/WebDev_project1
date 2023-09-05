@@ -10,7 +10,7 @@ type CityProposalProps = {
 
 function CityProposal({ city }: CityProposalProps) {
   const { isLoading, isError, data, error } = useQuery<ICity[], Error>({
-    queryKey: [city],
+    queryKey: [city + "proposal"],
     queryFn: () => getSearch(city),
   });
 
