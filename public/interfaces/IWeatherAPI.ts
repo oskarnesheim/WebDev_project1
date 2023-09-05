@@ -74,7 +74,7 @@ interface alert {
   alert: string
 }
 
-interface forecastday{
+export interface forecastday{
   date: string;
   date_epoch: number;
   day: day;
@@ -82,7 +82,7 @@ interface forecastday{
   hour: hour[];
 }
 
-interface day {
+export interface day {
   maxtemp_c: number;
   maxtemp_f: number;
   mintemp_c: number;

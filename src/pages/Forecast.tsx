@@ -36,7 +36,8 @@ function Forecast() {
               {forecastDay.hour.map((day) => {
                 return (
                   <div key={day.time_epoch}>
-                    {day.time} - {metric ? day.temp_c + "C" : day.temp_f + "F"}
+                    {day.time.slice(-5)} -
+                    {metric ? day.temp_c + "C" : day.temp_f + "F"}
                   </div>
                 );
               })}
