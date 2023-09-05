@@ -12,12 +12,7 @@ function Home() {
       <h1 className="font-bold text-3xl">Weathersearcher</h1>
       <section>
         <h3>Get the current weather for your city</h3>
-
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
-
-        {/* <Routes>
-          <Route path=":city" element={<City />} loader={} />
-        </Routes> */}
         {citySearch && <CityProposal city={citySearch} />}
         <Outlet />
       </section>

@@ -1,44 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-  NavLink,
-  Outlet,
-  Route,
-  Routes,
-  useLoaderData,
-  useParams,
-} from "react-router-dom";
-import CurrentWeather from "../components/CurrentWeather";
-import { useState } from "react";
-import Forecast from "./Forecast";
+import { NavLink, Outlet, useLoaderData } from "react-router-dom";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 function City() {
   const city: string = useLoaderData() as string;
-  console.log(city);
-  const [showCurrent, setShowCurrent] = useState(true);
   return (
     <div>
-      {/* <Routes>
-        <Route path={"current"} element={<CurrentWeather city={"Oslo"} />} />
-        <Route path={"forecast"} element={<CurrentWeather city={"Oslo"} />} />
-      </Routes> */}
-      {/* <nav>
-        <NavLink to="current">Current</NavLink>
-        <NavLink to="forecast">Forecast</NavLink>
-      </nav> */}
-      {city}
-      <div>
-        <button onClick={() => setShowCurrent(false)}>Forecast</button>
-        <button onClick={() => setShowCurrent(true)}>Current</button>
-      </div>
-      <div className="show_details">
-        {showCurrent ? (
-          <CurrentWeather city={city} />
-        ) : (
-          <Forecast city={city} />
-        )}
-      </div>
+      <h2>Welcome to {city}</h2>
+      <nav>
+        <NavLink to={`current`}>Current</NavLink>
+        <NavLink to={`forecast`}>Forecast</NavLink>
+      </nav>
+      <Outlet />
     </div>
   );
 }

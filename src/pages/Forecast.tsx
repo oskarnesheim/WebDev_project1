@@ -1,21 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import getForecast from "../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
-import { IWeatherForeCastData } from "../../public/interfaces/Forecast";
-import getCurrent from "../functions/GetCurrent";
+import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
+import { useParams } from "react-router-dom";
 
-type ForecastProps = {
-  city: string;
-  // numberOfDays: number;
-  // airQuality: boolean;
-  // allerts: boolean;
-};
+function Forecast() {
+  const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
 
-function Forecast({ city }: ForecastProps) {
   const { isLoading, isError, data, error } = useQuery<
     IWeatherForeCastData,
     Error
   >({
-    queryKey: [city],
-    queryFn: () => getCurrent(city),
+    queryKey: [city + "forecast"],
+    queryFn: () => getForecast(city!),
   });
   if (isLoading) {
     return <div>Loading... ...</div>;
@@ -26,20 +23,7 @@ function Forecast({ city }: ForecastProps) {
 
   return (
     <div>
-      <div>{data.location.name}</div>
-      <div>{data.location.country}</div>
-      <div>{data.location.region}</div>
-      <div>{data.current.humidity}</div>
-      <div>
-        {data.forecast.forecastday.map((e) => {
-          return <div>{e.date}</div>;
-        })}
-      </div>
-      <div>
-        {data.alerts.map((e) => {
-          return <div>{e.alert}</div>;
-        })}
-      </div>
+      <h2>This is the forcast for {data.location.name}</h2>
     </div>
   );
 }

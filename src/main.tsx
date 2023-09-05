@@ -4,18 +4,14 @@ import App from "./App.tsx";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import {
-  LoaderFunction,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./components/Home.tsx";
 import MyCities from "./pages/MyCities.tsx";
 import City from "./pages/City.tsx";
-import getCurrent from "./functions/GetCurrent.ts";
 import CurrentWeather from "./components/CurrentWeather.tsx";
 import Forecast from "./pages/Forecast.tsx";
+
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -33,23 +29,16 @@ const router = createBrowserRouter([
             loader: async ({ params }) => {
               return params.city;
             },
-            // children: [
-            //   {
-            //     path: "current",
-            //     element: <CurrentWeather />,
-            //   },
-            //   {
-            //     path: "forecast",
-            //     element: <Forecast />,
-            //   },
-            // ],
-            // loader: async ({ params }) => {
-            //   if (!params.city) {
-            //     return { data: null };
-            //   }
-            //   const data = await getCurrent(params.city);
-            //   return { data };
-            // },
+            children: [
+              {
+                path: "current",
+                element: <CurrentWeather />,
+              },
+              {
+                path: "forecast",
+                element: <Forecast />,
+              },
+            ],
           },
         ],
       },
