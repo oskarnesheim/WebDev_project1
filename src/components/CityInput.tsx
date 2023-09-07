@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import "./CityInput.css";
+
 type CityInputProps = {
   updateSearch: React.Dispatch<React.SetStateAction<string>>;
   currentSearch: string;
