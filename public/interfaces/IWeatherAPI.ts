@@ -53,7 +53,7 @@ interface condition {
   text: string;
   icon: string;
   code: number;
-}
+} 
 
 interface air_quality {
   co: number;
@@ -74,13 +74,15 @@ interface alert {
   alert: string
 }
 
-interface forecastday{
+export interface forecastday{
   date: string;
   date_epoch: number;
-  day: day[];
+  day: day;
+  astro: astro;
+  hour: hour[];
 }
 
-interface day {
+export interface day {
   maxtemp_c: number;
   maxtemp_f: number;
   mintemp_c: number;
@@ -117,7 +119,7 @@ interface astro{
   is_sun_up: number,
 }
 
-interface hour{
+export interface hour{
   time_epoch: number;
   time: string;
   temp_c: number;

@@ -45,8 +45,14 @@ function City() {
         {favorite}
       </h2>
       <nav>
-        <NavLink to={`current`}>Current</NavLink>
-        <NavLink to={`forecast`}>Forecast</NavLink>
+        <ul>
+          <li>
+            <NavLink to={`current`}>Current</NavLink>
+          </li>
+          <li>
+            <NavLink to={`forecast`}>Forecast</NavLink>
+          </li>
+        </ul>
       </nav>
       <button onClick={toggleFavorite}>Toggle favorite</button>
       <Outlet />
