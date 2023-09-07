@@ -8,7 +8,7 @@ function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
 
   return (
-    <div className="mx-[30%] mt-10">
+    <div className="mx-[20%] mt-10">
       <h1 className="font-bold text-3xl">Weathersearcher</h1>
       <section>
         <h3>Get the current weather for your city</h3>

@@ -119,7 +119,7 @@ interface astro{
   is_sun_up: number,
 }
 
-interface hour{
+export interface hour{
   time_epoch: number;
   time: string;
   temp_c: number;
