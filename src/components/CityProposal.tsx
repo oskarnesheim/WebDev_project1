@@ -26,7 +26,7 @@ function CityProposal({ city }: CityProposalProps) {
     <div className="rounded-2xl border-solid border-4 p-2 border-gray-800">
       {data &&
         data.map((cityProposal) => (
-          <NavLink key={cityProposal.id} to={cityProposal.name}>
+          <NavLink key={cityProposal.id} to={cityProposal.name + "/current"}>
             {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
           </NavLink>
         ))}

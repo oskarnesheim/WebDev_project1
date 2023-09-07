@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
-import { NavLink, Outlet, useLoaderData } from "react-router-dom";
+import { NavLink, Outlet, useLoaderData, useParams } from "react-router-dom";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 function City() {
-  const city: string = useLoaderData() as string;
+  const { city } = useParams();
 
-  const [favorite, setFavorite] = useState(getCityStatus(city));
+  const [favorite, setFavorite] = useState(getCityStatus(city!));
 
   function getCityStatus(cityName: string) {
     const favorites: string[] = getFavorites();
@@ -29,13 +29,13 @@ function City() {
 
   function toggleFavorite() {
     const favorites: string[] = getFavorites();
-    if (favorites.includes(city)) {
-      favorites.splice(favorites.indexOf(city), 1);
+    if (favorites.includes(city!)) {
+      favorites.splice(favorites.indexOf(city!), 1);
     } else {
-      favorites.push(city);
+      favorites.push(city!);
     }
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    return setFavorite(getCityStatus(city));
+    return setFavorite(getCityStatus(city!));
   }
 
   return (
