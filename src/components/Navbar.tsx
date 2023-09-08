@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="sidebar">
       <NavLink to={"/"}>
-        <h1 className="Weathersearcher">WeatherSearcher</h1>
+        {/* <h1 className="Weathersearcher">WeatherSearcher</h1> */}
       </NavLink>
       <nav className="NavLinks">
         <Navbar_Item newPath="/" header="Home" />
