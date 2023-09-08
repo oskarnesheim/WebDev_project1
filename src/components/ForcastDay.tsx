@@ -3,6 +3,7 @@ import { forecastday } from "../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";
 import "./City.css";
+import WeatherChart from "./WeatherChart";
 
 type forcastDayProps = {
   day: forecastday;
@@ -37,9 +38,7 @@ export default function ForcastDay({ day }: forcastDayProps) {
         <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
       </div>
 
-      {showHours && (
-        <ForecastHours key={day.date_epoch} preview={false} hours={day.hour} />
-      )}
+      {showHours && <WeatherChart day={day} />}
     </div>
   );
 }
