@@ -1,51 +1,38 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState } from "react";
-import { NavLink, Outlet, useLoaderData, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { favoriteCities } from "../recoil/atoms";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 function City() {
   const { city } = useParams();
-
-  const [favorite, setFavorite] = useState(getCityStatus(city!));
+  const [favoriteCitiesList, setFavoriteCitiesList] =
+    useRecoilState(favoriteCities);
+  const [starSymbol, setStarSymbol] = useState(getCityStatus(city!));
 
   function getCityStatus(cityName: string) {
-    const favorites: string[] = getFavorites();
-    console.log(favorites);
-
-    if (favorites.includes(cityName)) {
-      return "★";
-    }
-    return "☆";
-  }
-
-  function getFavorites() {
-    let favorites: string[] = [];
-    if (localStorage.getItem("favorites")) {
-      favorites = JSON.parse(localStorage.getItem("favorites")!);
-    }
-    return favorites;
+    return !favoriteCitiesList.includes(cityName) ? "★" : "☆";
   }
 
   function toggleFavorite() {
-    const favorites: string[] = getFavorites();
-    if (favorites.includes(city!)) {
-      favorites.splice(favorites.indexOf(city!), 1);
+    const favorites: string[] = [...favoriteCitiesList];
+    if (!favorites.includes(city!)) {
+      favorites.push(city!);
     } else {
-      if (favorites.length >= 5) {
-        favorites.pop();
-      }
-      favorites.splice(0, 0, city!);
+      favorites.splice(favorites.indexOf(city!), 1);
     }
     localStorage.setItem("favorites", JSON.stringify(favorites));
-    return setFavorite(getCityStatus(city!));
+    setFavoriteCitiesList(favorites);
+    setStarSymbol(getCityStatus(city!));
   }
 
   return (
     <div>
       <h2>
         Welcome to {city}
-        {favorite}
+        <div onClick={() => toggleFavorite()}>{starSymbol}</div>
       </h2>
       <nav>
         <ul>
@@ -57,7 +44,6 @@ function City() {
           </li>
         </ul>
       </nav>
-      <button onClick={toggleFavorite}>Toggle favorite</button>
       <Outlet />
     </div>
   );

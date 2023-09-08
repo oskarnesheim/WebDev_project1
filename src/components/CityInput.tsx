@@ -6,7 +6,7 @@ type CityInputProps = {
 
 function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
-    <div className="my-5">
+    <div className="">
       <label htmlFor="cityName">Enter City Name:</label>
       <input
         type="text"
