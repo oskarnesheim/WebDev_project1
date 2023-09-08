@@ -13,9 +13,7 @@ function City() {
   const [starSymbol, setStarSymbol] = useState(getCityStatus(city!));
 
   function getCityStatus(cityName: string) {
-    console.log(favoriteCitiesList);
-    console.log(favoriteCitiesList.includes(cityName));
-    return favoriteCitiesList.includes(cityName) ? "★" : "☆";
+    return !favoriteCitiesList.includes(cityName) ? "★" : "☆";
   }
 
   function toggleFavorite() {
