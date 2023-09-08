@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 import FavoriteCityList from "./FavoriteCityList";
 import { useRecoilState } from "recoil";
 import { favoriteCities } from "../recoil/atoms";
+import "./Home.css";
 
 function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
