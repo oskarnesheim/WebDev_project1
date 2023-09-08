@@ -4,9 +4,9 @@ import MetricChooser from "./MetricChooser";
 
 function Navbar() {
   return (
-    <div className="sidebar bg-gray-800 text-white p-4 w-full flex flex-row justify-between">
+    <div className="sidebar ">
       <NavLink to={"/"}>
-        <h1 className="font-bold text-3xl">Weathersearcher</h1>
+        <h1 className="">Weathersearcher</h1>
       </NavLink>
       <nav className="NavLinks flex flex-row">
         <Navbar_Item newPath="/" header="Home" />
