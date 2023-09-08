@@ -19,7 +19,7 @@ export default function ForecastHours({ hours, preview }: forecastHourProps) {
     return (
       <div className={classname} key={hour.time_epoch}>
         <div>
-          {hour.time.slice(-5)} -
+          {hour.time.slice(-5)}
           {metric ? hour.temp_c + "C" : hour.temp_f + "F"}
           {!preview &&
             hour.uv +

@@ -2,8 +2,12 @@
 
 /* Style for the sidebar container */
 .sidebar {
-    background-color: aliceblue;
+    background-color: rgb(60, 153, 235);
     padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     /* Add padding to the entire sidebar */
     display: flex;
     flex-direction: row;
