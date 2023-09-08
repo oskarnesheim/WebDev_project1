@@ -22,35 +22,16 @@ export default function WeatherChart({ day }: forcastDayProps) {
             datasets: [
               {
                 label: "Temperature (°C)",
-                borderColor: "red",
+                borderColor: "#f5427e",
                 data: day.hour.map((hour) => hour.temp_c),
                 type: "line",
               },
-              //   {
-              //     label: "Rain (mm)",
-              //     borderColor: "blue",
-              //     data: day.hour.map((hour) => hour.precip_mm),
-              //     type: "line",
-              //   },
-              // {
-              //   label: "Rain (mm)",
-              //   backgroundColor: "blue", // Set the background color to blue
-              //   data: day.hour.map((hour) =>
-              //     hour.precip_mm > 0 ? hour.precip_mm : null
-              //   ), // Set rain to null if it's 0 or less
-              // },
               {
                 label: "Rain (mm)",
-                backgroundColor: "rgba(0, 0, 255, 0.5)", // Set the background color to blue with transparency
-                data: day.hour.map((hour) => 10 * hour.precip_mm), // Set rain to null if it's 0 or less
-                hidden: true, // Initially hide this dataset
-              },
-              {
-                label: "Visible Rain (mm)", // Label for the visible rain dataset
-                backgroundColor: "rgba(0, 0, 255, 0.5)", // Set the background color to blue with transparency
+                backgroundColor: "rgba(0, 0, 255, 0.5)",
                 data: day.hour.map((hour) =>
-                  hour.precip_mm > 0 ? hour.precip_mm * 10 : null
-                ), // Set rain to null if it's 0 or less
+                  hour.precip_mm > 0 ? hour.precip_mm : null
+                ),
               },
               {
                 label: "Wind (m/s)",

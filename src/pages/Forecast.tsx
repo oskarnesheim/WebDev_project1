@@ -35,7 +35,6 @@ function Forecast() {
           return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
         })}
       </div>
-      <WeatherChart day={data.forecast.forecastday[1]} />
     </div>
   );
 }
