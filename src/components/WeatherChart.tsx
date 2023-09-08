@@ -63,7 +63,7 @@ export default function WeatherChart({ day }: forcastDayProps) {
   }, [day]);
 
   return (
-    <div>
+    <div style={{ zIndex: 10 }}>
       <canvas ref={canvasRef} width={800} height={400} />
     </div>
   );

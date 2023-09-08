@@ -28,12 +28,11 @@ export default function ForcastDay({ day }: forcastDayProps) {
   }
 
   return (
-    <div
-      onClick={() => setShowHours(!showHours)}
-      className="ForecastDay"
-      key={day.date_epoch}
-    >
-      <div className="ForecastDay_preview">
+    <div className="ForecastDay" key={day.date_epoch}>
+      <div
+        onClick={() => setShowHours(!showHours)}
+        className="ForecastDay_preview"
+      >
         {getDayOfWeek(day.date)} {day.date.slice(5)}
         <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
       </div>
