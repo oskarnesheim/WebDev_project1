@@ -2,6 +2,7 @@
 import { hour } from "../../public/interfaces/IWeatherAPI";
 import { measuringUnit } from "../recoil/atoms";
 import { useRecoilState } from "recoil";
+import WeatherChart from "./WeatherChart";
 
 type forecastHourProps = {
   hours: hour[];

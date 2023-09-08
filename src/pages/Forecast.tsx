@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../recoil/atoms";
 import ForecastDay from "../components/ForcastDay";
+import WeatherChart from "../components/WeatherChart";
 
 function Forecast() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
@@ -34,6 +35,7 @@ function Forecast() {
           return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
         })}
       </div>
+      <WeatherChart day={data.forecast.forecastday[1]} />
     </div>
   );
 }
