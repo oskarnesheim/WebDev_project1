@@ -3,11 +3,14 @@ import { useState } from "react";
 import CityInput from "./CityInput";
 import CityProposal from "./CityProposal";
 import { Outlet } from "react-router-dom";
-import "./Home.css";
-import image from "../images/home-background.avif";
+import FavoriteCityList from "./FavoriteCityList";
+import { useRecoilState } from "recoil";
+import { favoriteCities } from "../recoil/atoms";
 
 function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
+  const [favoriteCitiesList, setFavoriteCitiesList] =
+    useRecoilState(favoriteCities);
 
   return (
     <div className="home-container">
@@ -17,6 +20,7 @@ function Home() {
         <h3 className="home-subheading">Get the current weather for your city</h3>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
         {citySearch && <CityProposal city={citySearch} />}
+        <FavoriteCityList cities={favoriteCitiesList} />
         <Outlet />
       </section>
     </div>
