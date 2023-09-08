@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import "./CityInput.css";
+
 type CityInputProps = {
   updateSearch: React.Dispatch<React.SetStateAction<string>>;
   currentSearch: string;
@@ -6,7 +8,7 @@ type CityInputProps = {
 
 function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
-    <div className="">
+    <div className="input-container">
       <label htmlFor="cityName">Enter City Name:</label>
       <input
         type="text"

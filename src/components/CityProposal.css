@@ -1,0 +1,34 @@
+/* CityProposal.css */
+
+/* Style for the container */
+.city-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Style for individual city items */
+.city-item {
+    margin-bottom: 10px;
+    /* Add spacing between city items */
+}
+
+/* Style for the links */
+.city-link {
+    text-decoration: none;
+    /* Remove underlines */
+    color: #333;
+    /* Blue color for links */
+    font-weight: bold;
+    font-size: 16px;
+    /* Adjust font size as needed */
+}
+
+/* Style for the links on hover */
+.city-link:hover {
+    text-decoration: underline;
+    /* Add underlines on hover */
+    color: #50c8ff;
+    /* Darker blue color on hover */
+}

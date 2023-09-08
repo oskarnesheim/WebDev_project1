@@ -8,7 +8,7 @@ function Navbar() {
       <NavLink to={"/"}>
         <h1 className="">Weathersearcher</h1>
       </NavLink>
-      <nav className="NavLinks flex flex-row">
+      <nav className="NavLinks">
         <Navbar_Item newPath="/" header="Home" />
         <Navbar_Item newPath="/my_cities" header="My cities" />
         <MetricChooser />

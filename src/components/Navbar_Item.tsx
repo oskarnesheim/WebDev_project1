@@ -8,7 +8,10 @@ interface INavPage {
 
 function Navbar_Item({ newPath, header }: INavPage) {
   return (
-    <NavLink to={newPath} className="">
+    <NavLink
+      to={newPath}
+      className="navbar-item"
+    >
       {header}
     </NavLink>
   );

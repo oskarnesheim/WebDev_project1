@@ -1,0 +1,28 @@
+/* Home.css */
+
+/* Style for the container div */
+.home-container {
+    margin-left: 0%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+
+/* Style for the heading */
+.home-heading {
+    font-weight: bold;
+    font-size: 36px;
+    color: #000000;
+}
+
+/* Style for the section containing weather search */
+.home-section {
+    margin-top: 20px;
+}
+
+/* Style for the h3 element */
+.home-subheading {
+    font-weight: bold;
+    font-size: 24px;
+    color: #50c8ff;
+}

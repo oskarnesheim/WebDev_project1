@@ -13,10 +13,11 @@ function Home() {
     useRecoilState(favoriteCities);
 
   return (
-    <div className="">
-      <h1 className="">Weathersearcher</h1>
-      <section>
-        <h3>Get the current weather for your city</h3>
+    <div className="home-container">
+      {/* <img className="home-background" src={image} alt="background" /> */}
+      <h1 className="home-heading">WeatherSearcher</h1>
+      <section className="home-section">
+        <h3 className="home-subheading">Get the current weather for your city</h3>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
         {citySearch && <CityProposal city={citySearch} />}
         <FavoriteCityList cities={favoriteCitiesList} />

@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import getSearch from "../functions/GetSearch";
 import ICity from "../../public/interfaces/CitySearch";
 import { NavLink } from "react-router-dom";
+import "./CityProposal.css";
 
 type CityProposalProps = {
   city: string;
@@ -23,12 +24,14 @@ function CityProposal({ city }: CityProposalProps) {
   }
 
   return (
-    <div className="rounded-2xl border-solid border-4 p-2 border-gray-800">
+    <div className="city-container">
       {data &&
         data.map((cityProposal) => (
-          <NavLink key={cityProposal.id} to={cityProposal.name + "/current"}>
-            {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
-          </NavLink>
+          <div className="city-item" key={cityProposal.id}>
+            <NavLink key={cityProposal.id} to={cityProposal.name}>
+              {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
+            </NavLink>
+          </div>
         ))}
     </div>
   );
