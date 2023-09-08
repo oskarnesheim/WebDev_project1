@@ -32,7 +32,10 @@ function City() {
     if (favorites.includes(city!)) {
       favorites.splice(favorites.indexOf(city!), 1);
     } else {
-      favorites.push(city!);
+      if (favorites.length >= 5) {
+        favorites.pop();
+      }
+      favorites.splice(0, 0, city!);
     }
     localStorage.setItem("favorites", JSON.stringify(favorites));
     return setFavorite(getCityStatus(city!));
