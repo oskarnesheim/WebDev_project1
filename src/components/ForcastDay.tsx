@@ -4,6 +4,7 @@ import ForecastHours from "./ForecastHours";
 import { useState } from "react";
 import "./City.css";
 import WeatherChart from "./WeatherChart";
+import "./Forecast.css";
 
 type forcastDayProps = {
   day: forecastday;
@@ -34,7 +35,9 @@ export default function ForcastDay({ day }: forcastDayProps) {
         className="ForecastDay_preview"
       >
         {getDayOfWeek(day.date)} {day.date.slice(5)}
-        <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
+        <div className="ForecastHours_preview">
+          <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
+        </div>
       </div>
 
       {showHours && <WeatherChart day={day} />}

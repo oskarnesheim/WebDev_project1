@@ -8,7 +8,6 @@
     top: 0;
     left: 0;
     right: 0;
-    /* Add padding to the entire sidebar */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,13 +17,10 @@
 /* Style for the app name */
 .sidebar h1 {
     font-size: 2rem;
-    /* Adjust font size as needed */
     text-decoration: none;
-    /* Remove underlines */
-    color: #50c8ff;
-    /* Text color */
+    color: #ffffff;
     transition: color 0.3s;
-    /* Add a smooth color transition on hover */
+    cursor: pointer;
 }
 
 /* Style for the navigation links */
@@ -36,21 +32,13 @@
 /* Style for individual navigation items */
 .NavLinks a {
     margin-right: 1rem;
-    /* Add spacing between items */
     text-decoration: none;
-    /* Remove underlines */
     font-size: 1.2rem;
-    /* Adjust font size as needed */
-    color: #50c8ff;
-    /* Text color */
+    color: #ffffff;
     transition: color 0.3s;
-    /* Add a smooth color transition on hover */
 }
 
 .sidebar h1:hover,
 .NavLinks a:hover {
     color: #9bdfff;
-    /* Light blue color on hover */
-    text-decoration: underline;
-    /* Add an underline on hover */
 }

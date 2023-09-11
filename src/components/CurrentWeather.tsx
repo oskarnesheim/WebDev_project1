@@ -64,7 +64,7 @@ export default function CurrentWeather({ city }: cityProps) {
   }
 
   return (
-    <div>
+    <div className="current-weather-container">
       <div>
         <span className="location">
           <h1 className="location-header">
@@ -75,23 +75,27 @@ export default function CurrentWeather({ city }: cityProps) {
             {data.location.region}/{data.location.country}
           </p>
         </span>
-        <div>
+        <div className="temperature">
           {metric ? data.current.temp_c + "C" : data.current.temp_f + "F"}
-          <img src={data.current.condition.icon} alt="" />
+          <img 
+            className="weather-icon"
+            src={data.current.condition.icon}
+            alt=""
+          />
         </div>
         <button onClick={() => toggleAdvanced()}>
           {showAdvanced ? "Hide Andvanced" : "Show Andvanced"}
         </button>
       </div>
       {showAdvanced && (
-        <div>
-          <div>
+        <div  className="advanced-info">
+          <div  className="weather-info-item">
             Direction: {data.current.wind_dir} -{" "}
             {metric
               ? (data.current.wind_kph / 3.6).toPrecision(2) + " Kph"
               : (data.current.wind_mph / 3.6).toPrecision(2) + " Mph"}
           </div>
-          <div>
+          <div  className="weather-info-item">
             Humidity: {data.current.humidity}%
             <br />
             Cloud: {data.current.cloud}%
