@@ -12,6 +12,11 @@ type forcastDayProps = {
 
 export default function ForcastDay({ day }: forcastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
+  const [display, setDisplay] = useState<string>(getDisplay(showHours));
+
+  function getDisplay(showPreview: boolean) {
+    return !showPreview ? "flex" : "none";
+  }
 
   function getDayOfWeek(day: string) {
     const dayOfWeek = new Date(day).getDay();
@@ -35,12 +40,19 @@ export default function ForcastDay({ day }: forcastDayProps) {
         className="ForecastDay_preview"
       >
         {getDayOfWeek(day.date)} {day.date.slice(5)}
-        <div className="ForecastHours_preview">
+        <div
+          className="ForecastHours_preview"
+          style={{
+            display: getDisplay(showHours),
+          }}
+        >
           <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
         </div>
       </div>
 
-      {showHours && <WeatherChart day={day} />}
+      {showHours && (
+        <ForecastHours key={day.date_epoch} hours={day.hour} preview={false} />
+      )}
     </div>
   );
 }
