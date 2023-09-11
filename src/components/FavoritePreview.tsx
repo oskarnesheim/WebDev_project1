@@ -9,13 +9,9 @@ import "./Home.css";
 
 type FavoritePreviewProps = {
   city: string;
-  disaledLink?: boolean;
 };
 
-export default function FavoritePreview({
-  city,
-  disaledLink = false,
-}: FavoritePreviewProps) {
+export default function FavoritePreview({ city }: FavoritePreviewProps) {
   const [metric, setMetric] = useRecoilState(measuringUnit);
   const navigate = useNavigate();
 
@@ -37,7 +33,7 @@ export default function FavoritePreview({
   return (
     <div
       className="city_preview"
-      onClick={() => !disaledLink && navigate(city + "/forecast")}
+      onClick={() => navigate(city + "/forecast")}
       key={data.location.name + "/preview"}
     >
       <span className="">
