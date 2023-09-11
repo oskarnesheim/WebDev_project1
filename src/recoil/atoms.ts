@@ -26,3 +26,18 @@ function getFavorites() {
     }
     return favorites;
   }
+
+export const globalAdvancedState = atom({
+  key: "globalAdvancedState", // unique ID (with respect to other atoms/selectors)
+  default: getAdvanced() as boolean, // default value (aka initial value)
+});
+
+function getAdvanced() {
+    let showAdvanced: boolean = false;
+    if (localStorage.getItem("showAdvanced")) {
+      showAdvanced = JSON.parse(localStorage.getItem("showAdvanced")!);
+    }
+    return showAdvanced;
+  }
+
+

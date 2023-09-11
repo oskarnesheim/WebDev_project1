@@ -6,13 +6,39 @@ import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { measuringUnit } from "../recoil/atoms";
-import "./CurrentWeather.css";
+import {
+  favoriteCities,
+  globalAdvancedState,
+  measuringUnit,
+} from "../recoil/atoms";
 
-export default function CurrentWeather() {
-  const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
-  const [showAdvanced, setShowAdvanced] = useState(false);
+type cityProps = {
+  city: string;
+};
+
+export default function CurrentWeather({ city }: cityProps) {
+  const [showAdvanced, setShowAdvanced] = useRecoilState(globalAdvancedState);
   const [metric, setMetric] = useRecoilState(measuringUnit);
+
+  const [favoriteCitiesList, setFavoriteCitiesList] =
+    useRecoilState(favoriteCities);
+  const [starSymbol, setStarSymbol] = useState(getCityStatus(city!));
+
+  function getCityStatus(cityName: string) {
+    return !favoriteCitiesList.includes(cityName) ? "★" : "☆";
+  }
+
+  function toggleFavorite() {
+    const favorites: string[] = [...favoriteCitiesList];
+    if (!favorites.includes(city!)) {
+      favorites.push(city!);
+    } else {
+      favorites.splice(favorites.indexOf(city!), 1);
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    setFavoriteCitiesList(favorites);
+    setStarSymbol(getCityStatus(city!));
+  }
 
   const { isLoading, isError, data, error } = useQuery<
     ICurrentWeatherData,
@@ -28,11 +54,23 @@ export default function CurrentWeather() {
     return <div>We found this error... {error.message}</div>;
   }
 
+  function toggleAdvanced() {
+    setShowAdvanced(!showAdvanced);
+    if (showAdvanced) {
+      localStorage.setItem("showAdvanced", JSON.stringify(false));
+    } else {
+      localStorage.setItem("showAdvanced", JSON.stringify(true));
+    }
+  }
+
   return (
     <div className="current-weather-container">
       <div>
         <span className="location">
-          <h1 className="location-header">{data.location.name}</h1>
+          <h1 className="location-header">
+            {data.location.name} -
+            <button onClick={() => toggleFavorite()}>{starSymbol}</button>
+          </h1>
           <p className="location-region">
             {data.location.region}/{data.location.country}
           </p>
@@ -45,11 +83,8 @@ export default function CurrentWeather() {
             alt=""
           />
         </div>
-        <button 
-          className="toggle-button"
-          onClick={() => setShowAdvanced(!showAdvanced)}
-        >
-          {showAdvanced ? "Hide" : "Show"}
+        <button onClick={() => toggleAdvanced()}>
+          {showAdvanced ? "Hide Andvanced" : "Show Andvanced"}
         </button>
       </div>
       {showAdvanced && (
