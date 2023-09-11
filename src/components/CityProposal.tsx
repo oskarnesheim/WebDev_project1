@@ -31,9 +31,9 @@ function CityProposal({ city, setCity }: CityProposalProps) {
         data.map((cityProposal) => (
           <div
             onClick={(e) => {
+              e.preventDefault();
               setCity("");
               navigate(cityProposal.name + "/forecast");
-              e.preventDefault();
             }}
             className="city-item"
             key={cityProposal.id}
