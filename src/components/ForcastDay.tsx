@@ -3,7 +3,6 @@ import { forecastday } from "../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";
 import "./City.css";
-import WeatherChart from "./WeatherChart";
 import "./Forecast.css";
 
 type forcastDayProps = {
