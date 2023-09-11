@@ -2,14 +2,16 @@
 import { useQuery } from "@tanstack/react-query";
 import getSearch from "../functions/GetSearch";
 import ICity from "../../public/interfaces/CitySearch";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./CityProposal.css";
 
 type CityProposalProps = {
   city: string;
+  setCity: React.Dispatch<React.SetStateAction<string>>;
 };
 
-function CityProposal({ city }: CityProposalProps) {
+function CityProposal({ city, setCity }: CityProposalProps) {
+  const navigate = useNavigate();
   const { isLoading, isError, data, error } = useQuery<ICity[], Error>({
     queryKey: [city + "proposal"],
     queryFn: () => getSearch(city),
@@ -27,10 +29,16 @@ function CityProposal({ city }: CityProposalProps) {
     <div className="city-container">
       {data &&
         data.map((cityProposal) => (
-          <div className="city-item" key={cityProposal.id}>
-            <NavLink key={cityProposal.id} to={cityProposal.name}>
-              {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
-            </NavLink>
+          <div
+            onClick={(e) => {
+              setCity("");
+              navigate(cityProposal.name + "/forecast");
+              e.preventDefault();
+            }}
+            className="city-item"
+            key={cityProposal.id}
+          >
+            {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
           </div>
         ))}
     </div>

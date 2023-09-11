@@ -26,3 +26,16 @@
     font-size: 24px;
     color: #50c8ff;
 }
+
+.favorites_preview{
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  flex-wrap: wrap;
+}
+
+.city_preview{
+
+}
+
