@@ -21,10 +21,11 @@
     /* Adjust font size as needed */
     text-decoration: none;
     /* Remove underlines */
-    color: #50c8ff;
+    color: #ffffff;
     /* Text color */
     transition: color 0.3s;
     /* Add a smooth color transition on hover */
+    cursor: pointer;
 }
 
 /* Style for the navigation links */
@@ -41,7 +42,7 @@
     /* Remove underlines */
     font-size: 1.2rem;
     /* Adjust font size as needed */
-    color: #50c8ff;
+    color: #ffffff;
     /* Text color */
     transition: color 0.3s;
     /* Add a smooth color transition on hover */

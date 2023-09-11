@@ -3,6 +3,7 @@ import { hour } from "../../public/interfaces/IWeatherAPI";
 import { measuringUnit } from "../recoil/atoms";
 import { useRecoilState } from "recoil";
 import WeatherChart from "./WeatherChart";
+import "./Forecast.css";
 
 type forecastHourProps = {
   hours: hour[];
@@ -21,14 +22,21 @@ export default function ForecastHours({ hours, preview }: forecastHourProps) {
       <div className={classname} key={hour.time_epoch}>
         <div>
           {hour.time.slice(-5)}
-          {metric ? hour.temp_c + "C" : hour.temp_f + "F"}
-          {!preview &&
-            hour.uv +
-              hour.wind_dir +
-              (hour.wind_kph / 3.6).toPrecision(2) +
-              "M/s"}
+          <span className="temperature">
+            {metric ? hour.temp_c + "C" : hour.temp_f + "F"}
+            {!preview && (
+              <span className="additional-info">
+                {hour.uv} UV | {hour.wind_dir} |{" "}
+                {(hour.wind_kph / 3.6).toPrecision(2)} M/s
+              </span>
+            )}
+          </span>
         </div>
-        <img src={hour.condition.icon} alt={hour.condition.text} />
+        <img
+          className="condition-icon"
+          src={hour.condition.icon}
+          alt={hour.condition.text}
+        />
       </div>
     );
   });

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../recoil/atoms";
+import "./CurrentWeather.css";
 
 export default function CurrentWeather() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
@@ -28,7 +29,7 @@ export default function CurrentWeather() {
   }
 
   return (
-    <div>
+    <div className="current-weather-container">
       <div>
         <span className="location">
           <h1 className="location-header">{data.location.name}</h1>
@@ -36,23 +37,30 @@ export default function CurrentWeather() {
             {data.location.region}/{data.location.country}
           </p>
         </span>
-        <div>
+        <div className="temperature">
           {metric ? data.current.temp_c + "C" : data.current.temp_f + "F"}
-          <img src={data.current.condition.icon} alt="" />
+          <img 
+            className="weather-icon"
+            src={data.current.condition.icon}
+            alt=""
+          />
         </div>
-        <button onClick={() => setShowAdvanced(!showAdvanced)}>
+        <button 
+          className="toggle-button"
+          onClick={() => setShowAdvanced(!showAdvanced)}
+        >
           {showAdvanced ? "Hide" : "Show"}
         </button>
       </div>
       {showAdvanced && (
-        <div>
-          <div>
+        <div  className="advanced-info">
+          <div  className="weather-info-item">
             Direction: {data.current.wind_dir} -{" "}
             {metric
               ? (data.current.wind_kph / 3.6).toPrecision(2) + " Kph"
               : (data.current.wind_mph / 3.6).toPrecision(2) + " Mph"}
           </div>
-          <div>
+          <div  className="weather-info-item">
             Humidity: {data.current.humidity}%
             <br />
             Cloud: {data.current.cloud}%

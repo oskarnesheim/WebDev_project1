@@ -12,10 +12,6 @@
 .city-item {
     margin-bottom: 10px;
     /* Add spacing between city items */
-}
-
-/* Style for the links */
-.city-link {
     text-decoration: none;
     /* Remove underlines */
     color: #333;
@@ -25,10 +21,15 @@
     /* Adjust font size as needed */
 }
 
+/* Style for active NavLink elements */
+.nav-link.active {
+    color: #9bdfff /* Set your desired color for active links */
+  }
+
 /* Style for the links on hover */
-.city-link:hover {
+.city-item:hover {
     text-decoration: underline;
     /* Add underlines on hover */
-    color: #50c8ff;
+    color: #9bdfff
     /* Darker blue color on hover */
 }
