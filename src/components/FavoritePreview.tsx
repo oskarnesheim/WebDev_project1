@@ -8,11 +8,13 @@ import { measuringUnit } from "../recoil/atoms";
 import "./Home.css";
 
 type FavoritePreviewProps = {
-  cities: string;
+  city: string;
+  disaledLink?: boolean;
 };
 
 export default function FavoritePreview({
-  cities: city,
+  city,
+  disaledLink = false,
 }: FavoritePreviewProps) {
   const [metric, setMetric] = useRecoilState(measuringUnit);
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ export default function FavoritePreview({
   return (
     <div
       className="city_preview"
-      onClick={() => navigate(city + "/forecast")}
+      onClick={() => !disaledLink && navigate(city + "/forecast")}
       key={data.location.name + "/preview"}
     >
       <span className="">

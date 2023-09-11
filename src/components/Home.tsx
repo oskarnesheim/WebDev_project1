@@ -18,7 +18,7 @@ function Home() {
       <section className="home-section">
         <div className="favorites_preview">
           {favoriteCitiesList.map((city) => {
-            return <FavoritePreview cities={city} />;
+            return <FavoritePreview city={city} />;
           })}
         </div>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />

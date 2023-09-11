@@ -34,7 +34,7 @@ function City() {
       <h2>
         <div onClick={() => toggleFavorite()}>{starSymbol}</div>
       </h2>
-      <FavoritePreview cities={city!} />
+      <FavoritePreview disaledLink={true} city={city!} />
       <Outlet />
     </div>
   );
