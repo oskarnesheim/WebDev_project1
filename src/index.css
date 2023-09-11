@@ -11,10 +11,6 @@ a {
   color: #333;
 }
 
-a:hover {
-  color: #9bdfff;
-}
-
 .contents_body {
   margin-top: 120px;
 }
