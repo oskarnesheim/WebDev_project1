@@ -28,13 +28,10 @@ function Forecast() {
 
   return (
     <div>
-      {metric ? "Metric" : "Imperial"}
-      <h2>This is the forcast for {data.location.name}</h2>
-      <div>
-        {data.forecast.forecastday.map((forecastDay) => {
-          return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
-        })}
-      </div>
+      <h3>Next 10 days:</h3>
+      {data.forecast.forecastday.map((forecastDay) => {
+        return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
+      })}
     </div>
   );
 }

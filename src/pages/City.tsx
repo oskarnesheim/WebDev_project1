@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Outlet, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { favoriteCities } from "../recoil/atoms";
+import FavoritePreview from "../components/FavoritePreview";
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
@@ -31,19 +32,9 @@ function City() {
   return (
     <div>
       <h2>
-        Welcome to {city}
         <div onClick={() => toggleFavorite()}>{starSymbol}</div>
       </h2>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to={`current`}>Current</NavLink>
-          </li>
-          <li>
-            <NavLink to={`forecast`}>Forecast</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <FavoritePreview disaledLink={true} city={city!} />
       <Outlet />
     </div>
   );
