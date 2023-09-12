@@ -5,11 +5,11 @@ import { useState } from "react";
 import "./City.css";
 import WeatherChart from "./WeatherChart";
 
-type forcastDayProps = {
+type forecastDayProps = {
   day: forecastday;
 };
 
-export default function ForcastDay({ day }: forcastDayProps) {
+export default function ForecastDay({ day }: forecastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
   console.log(day);
 
