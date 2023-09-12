@@ -16,11 +16,11 @@ function CityProposal({ city }: CityProposalProps) {
   });
 
   if (isLoading) {
-    return <div></div>;
+    return <div>Loading</div>;
   }
 
   if (isError && error.message === '[""] data is undefined') {
-    return <div>Loading</div>;
+    return <div>Error</div>;
   }
 
   return (
@@ -29,7 +29,8 @@ function CityProposal({ city }: CityProposalProps) {
         data.map((cityProposal) => (
           <div className="city-item" key={cityProposal.id}>
             <NavLink key={cityProposal.id} to={cityProposal.name}>
-              {cityProposal.name} - {cityProposal.region} - {cityProposal.country}
+              {cityProposal.name} - {cityProposal.region} -{" "}
+              {cityProposal.country}
             </NavLink>
           </div>
         ))}

@@ -11,6 +11,7 @@ type forcastDayProps = {
 
 export default function ForcastDay({ day }: forcastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
+  console.log(day);
 
   function getDayOfWeek(day: string) {
     const dayOfWeek = new Date(day).getDay();
