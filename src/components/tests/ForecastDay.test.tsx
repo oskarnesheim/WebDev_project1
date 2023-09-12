@@ -1,19 +1,19 @@
-import ForcastDay from "../ForcastDay";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { describe, expect, test } from "vitest";
+import { FORECASTDAY } from "../../test/setup";
+import ForcastDay from "../ForcastDay";
 
 describe("ForcastDay", () => {
   test("Should show input-container", () => {
     render(
       <BrowserRouter>
         <RecoilRoot>
-          <ForcastDay day={} />
+          <ForcastDay day={FORECASTDAY} />
         </RecoilRoot>
       </BrowserRouter>
     );
-    const titleElement = screen.getByLabelText("Favorite cities");
-    expect(titleElement).toBeDefined();
+    expect(screen.getAllByAltText("Overcast")).toBeDefined();
   });
 });
