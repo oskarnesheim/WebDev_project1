@@ -1,25 +1,22 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { render, screen } from "@testing-library/react";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vitest } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import CityInput from "../CityInput";
 
-// const [citySearch, setCitySearch] = useState<string>("test");
+const CITY = "London";
+const SETCITY = vitest.fn();
 
 describe("CityInput", () => {
   test("Should show input-container", () => {
     render(
       <BrowserRouter>
         <RecoilRoot>
-          <p>heisann</p>
-          {/* <CityInput
-            key={"CityInputTest"}
-            currentSearch={"test"}
-            updateSearch={() => {React.Dispatch<React.SetStateAction<string>>}}
-          /> */}
+          <CityInput currentSearch={CITY} updateSearch={SETCITY} />
         </RecoilRoot>
       </BrowserRouter>
     );
-    expect(screen.getByText("heisann")).toBeDefined();
+    expect(screen.findAllByAltText("London")).toBeDefined();
   });
 });
