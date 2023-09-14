@@ -11,24 +11,12 @@
 /* Style for individual city items */
 .city-item {
     margin-bottom: 10px;
-    /* Add spacing between city items */
-}
-
-/* Style for the links */
-.city-link {
-    text-decoration: none;
-    /* Remove underlines */
-    color: #333;
-    /* Blue color for links */
     font-weight: bold;
     font-size: 16px;
-    /* Adjust font size as needed */
+    cursor: pointer;
 }
 
-/* Style for the links on hover */
-.city-link:hover {
-    text-decoration: underline;
-    /* Add underlines on hover */
-    color: #50c8ff;
-    /* Darker blue color on hover */
+/* Style for the city item when it is selected */
+.city-item-selected {
+    color: #9bdfff;
 }

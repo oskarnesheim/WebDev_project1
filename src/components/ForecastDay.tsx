@@ -3,15 +3,19 @@ import { forecastday } from "../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";
 import "./City.css";
-import WeatherChart from "./WeatherChart";
+import "./Forecast.css";
 
 type forecastDayProps = {
   day: forecastday;
 };
 
-export default function ForecastDay({ day }: forecastDayProps) {
+export default function ForceastDay({ day }: forcastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
-  console.log(day);
+  const [display, setDisplay] = useState<string>(getDisplay(showHours));
+
+  function getDisplay(showPreview: boolean) {
+    return !showPreview ? "flex" : "none";
+  }
 
   function getDayOfWeek(day: string) {
     const dayOfWeek = new Date(day).getDay();
@@ -29,17 +33,25 @@ export default function ForecastDay({ day }: forecastDayProps) {
   }
 
   return (
-    <div
-      onClick={() => setShowHours(!showHours)}
-      className="ForecastDay"
-      key={day.date_epoch}
-    >
-      <div className="ForecastDay_preview">
+    <div className="ForecastDay" key={day.date_epoch}>
+      <div
+        onClick={() => setShowHours(!showHours)}
+        className="ForecastDay_preview"
+      >
         {getDayOfWeek(day.date)} {day.date.slice(5)}
-        <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
+        <div
+          className="ForecastHours_preview"
+          style={{
+            display: getDisplay(showHours),
+          }}
+        >
+          <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
+        </div>
       </div>
 
-      {showHours && <WeatherChart day={day} />}
+      {showHours && (
+        <ForecastHours key={day.date_epoch} hours={day.hour} preview={false} />
+      )}
     </div>
   );
 }

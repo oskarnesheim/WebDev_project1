@@ -25,10 +25,10 @@ input[type="text"] {
 
 /* Style for the placeholder text */
 input[type="text"]::placeholder {
-    color: #50c8ff;
+    color: rgb(60, 153, 235);
 }
 
 /* Style for the input field when it's focused */
 input[type="text"]:focus {
-    border-color: #50c8ff;
+    border-color: rgb(60, 153, 235);
 }

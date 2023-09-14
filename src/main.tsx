@@ -29,10 +29,6 @@ export const router = createBrowserRouter([
             element: <City />,
             children: [
               {
-                path: "current",
-                element: <CurrentWeather />,
-              },
-              {
                 path: "forecast",
                 element: <Forecast />,
               },
