@@ -103,9 +103,7 @@ export interface day {
   daily_chance_of_snow: number;
   condition: condition;
   uv: number;
-  // air_quality: air_quality;
-  astro: astro;
-  hour: hour[];
+  air_quality?: air_quality;
 }
 
 interface astro {
