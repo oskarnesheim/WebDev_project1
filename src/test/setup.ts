@@ -1,5 +1,8 @@
 import "@testing-library/jest-dom";
 import { day, forecastday } from "../../public/interfaces/IWeatherAPI";
+import { QueryClient } from "@tanstack/react-query";
+
+export const queryClient = new QueryClient();
 
 export const DAY: day = {
   maxtemp_c: 14.4,
