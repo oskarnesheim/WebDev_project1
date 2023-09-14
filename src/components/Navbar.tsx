@@ -13,7 +13,6 @@ function Navbar() {
       </h1>
       <nav className="NavLinks">
         <Navbar_Item newPath="/" header="Home" />
-        <Navbar_Item newPath="/my_cities" header="My cities" />
         <MetricChooser />
       </nav>
     </div>

@@ -38,7 +38,23 @@
     transition: color 0.3s;
 }
 
+/* Style for hover effect (common for both app name and navigation links) */
 .sidebar h1:hover,
 .NavLinks a:hover {
     color: #9bdfff;
+}
+
+/* Media query for screens with a maximum width of 390px (mobile phones) */
+@media (max-width: 390px) {
+
+    .sidebar h1 {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+
+    .NavLinks a {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        justify-content: center;
+    }
 }
