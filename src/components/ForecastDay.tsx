@@ -9,7 +9,7 @@ type forcastDayProps = {
   day: forecastday;
 };
 
-export default function ForcastDay({ day }: forcastDayProps) {
+export default function ForceastDay({ day }: forcastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>(getDisplay(showHours));
 

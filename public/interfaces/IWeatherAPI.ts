@@ -104,8 +104,6 @@ export interface day {
   condition: condition
   uv: number;
   air_quality: air_quality
-  astro: astro;
-  hour: hour[];
 }
 
 interface astro{
