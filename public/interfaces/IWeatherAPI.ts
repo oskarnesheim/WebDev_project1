@@ -4,7 +4,7 @@ export interface ICurrentWeatherData {
   current: current;
 }
 
-export interface IWeatherForeCastData{
+export interface IWeatherForeCastData {
   location: location;
   current: current;
   forecast: forecast;
@@ -53,7 +53,7 @@ interface condition {
   text: string;
   icon: string;
   code: number;
-} 
+}
 
 interface air_quality {
   co: number;
@@ -66,15 +66,15 @@ interface air_quality {
   gb_defra_index: number;
 }
 
-interface forecast{
+interface forecast {
   forecastday: forecastday[];
 }
 
 interface alert {
-  alert: string
+  alert: string;
 }
 
-export interface forecastday{
+export interface forecastday {
   date: string;
   date_epoch: number;
   day: day;
@@ -101,23 +101,23 @@ export interface day {
   daily_chance_of_rain: number;
   daily_will_it_snow: number;
   daily_chance_of_snow: number;
-  condition: condition
+  condition: condition;
   uv: number;
-  air_quality: air_quality
+  air_quality?: air_quality;
 }
 
-interface astro{
+interface astro {
   sunrise: string;
   sunset: string;
   moonrise: string;
   moonset: string;
   moon_phase: string;
   moon_illumination: string;
-  is_moon_up: number,
-  is_sun_up: number,
+  is_moon_up: number;
+  is_sun_up: number;
 }
 
-export interface hour{
+export interface hour {
   time_epoch: number;
   time: string;
   temp_c: number;
@@ -151,16 +151,15 @@ export interface hour{
   gust_mph: number;
   gust_kph: number;
   uv: number;
-  air_quality: {
-    co: number;
-    no2: number;
-    o3: number;
-    so2: number;
-    pm2_5: number;
-    pm10: number;
-    us_epa_index: number;
-    gb_defra_index: number;
-  };
 }
 
-
+// air_quality: {
+//   co: number;
+//   no2: number;
+//   o3: number;
+//   so2: number;
+//   pm2_5: number;
+//   pm10: number;
+//   us_epa_index: number;
+//   gb_defra_index: number;
+// };

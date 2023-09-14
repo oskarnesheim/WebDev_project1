@@ -14,7 +14,7 @@ import CurrentWeather from "./components/CurrentWeather.tsx";
 import Forecast from "./pages/Forecast.tsx";
 
 const queryClient = new QueryClient();
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,

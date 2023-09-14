@@ -18,11 +18,11 @@ function CityProposal({ city, setCity }: CityProposalProps) {
   });
 
   if (isLoading) {
-    return <div></div>;
+    return <div>Loading</div>;
   }
 
   if (isError && error.message === '[""] data is undefined') {
-    return <div>Loading</div>;
+    return <div>Error</div>;
   }
 
   return (

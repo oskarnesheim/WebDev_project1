@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./City.css";
 import "./Forecast.css";
 
-type forcastDayProps = {
+type forecastDayProps = {
   day: forecastday;
 };
 

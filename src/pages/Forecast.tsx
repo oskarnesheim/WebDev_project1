@@ -5,7 +5,7 @@ import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
 import { useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../recoil/atoms";
-import ForecastDay from "../components/ForcastDay";
+import ForecastDay from "../components/ForecastDay";
 import WeatherChart from "../components/WeatherChart";
 
 function Forecast() {
