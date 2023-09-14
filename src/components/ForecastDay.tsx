@@ -9,7 +9,7 @@ type forecastDayProps = {
   day: forecastday;
 };
 
-export default function ForceastDay({ day }: forcastDayProps) {
+export default function ForceastDay({ day }: forecastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
   const [display, setDisplay] = useState<string>(getDisplay(showHours));
 
@@ -22,14 +22,14 @@ export default function ForceastDay({ day }: forcastDayProps) {
     return isNaN(dayOfWeek)
       ? null
       : [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ][dayOfWeek];
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ][dayOfWeek];
   }
 
   return (
