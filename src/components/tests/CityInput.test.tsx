@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test, vitest } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import CityInput from "../CityInput";
 
 const CITY = "London";
+const UPDATED_CITY = "Oslo";
 const SETCITY = vitest.fn();
 
 describe("CityInput", () => {
-  test("Should show input-container", () => {
+  test("Should show CityInput with London as the search", () => {
     render(
       <BrowserRouter>
         <RecoilRoot>
@@ -18,5 +19,14 @@ describe("CityInput", () => {
       </BrowserRouter>
     );
     expect(screen.findAllByAltText("London")).toBeDefined();
+  });
+});
+
+describe("CityInput update", () => {
+  test("Should update the search to be Oslo", () => {
+    fireEvent.change(screen.getByPlaceholderText("E.g., New York"), {
+      target: { value: UPDATED_CITY },
+    });
+    expect(SETCITY).toHaveBeenCalledWith(UPDATED_CITY);
   });
 });
