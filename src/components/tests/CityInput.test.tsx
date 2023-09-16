@@ -30,3 +30,16 @@ describe("CityInput update", () => {
     expect(SETCITY).toHaveBeenCalledWith(UPDATED_CITY);
   });
 });
+
+describe("App snapshot test", () => {
+  test("Snapshot match", () => {
+    const result = render(
+      <BrowserRouter>
+        <RecoilRoot>
+          <CityInput currentSearch={CITY} updateSearch={SETCITY} />
+        </RecoilRoot>
+      </BrowserRouter>
+    );
+    expect(result).toMatchSnapshot();
+  });
+});
