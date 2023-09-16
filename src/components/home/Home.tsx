@@ -1,25 +1,33 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
-import CityInput from "./CityInput";
-import CityProposal from "./CityProposal";
 import { Outlet } from "react-router-dom";
 import FavoritePreview from "./FavoritePreview";
 import { useRecoilState } from "recoil";
-import { favoriteCities } from "../recoil/atoms";
 import "./Home.css";
+import { favoriteCities } from "../../recoil/atoms";
+import CityProposal from "./city_proposal/CityProposal";
+import CityInput from "./city_input/CityInput";
 
 function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
-  const [favoriteCitiesList, setFavoriteCitiesList] =
-    useRecoilState(favoriteCities);
+  const [favoriteCitiesList] = useRecoilState(favoriteCities);
 
   return (
     <div className="home-container">
       <section className="home-section">
         <div className="favorites_preview">
-          {favoriteCitiesList.map((city) => {
-            return <FavoritePreview city={city} />;
-          })}
+          {favoriteCitiesList.length !== 0 ? (
+            favoriteCitiesList.map((city) => {
+              return <FavoritePreview city={city} />;
+            })
+          ) : (
+            <div>
+              <h3>No favorites yet</h3>
+              <p>
+                You can click on the star next to the cityname in order to add
+                them to your favorites
+              </p>
+            </div>
+          )}
         </div>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
         {citySearch && (

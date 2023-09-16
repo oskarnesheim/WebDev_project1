@@ -1,16 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useQuery } from "@tanstack/react-query";
-import getCurrent from "../functions/GetCurrent";
-import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
-import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
+import { ICurrentWeatherData } from "../../../../public/interfaces/IWeatherAPI";
+import getCurrent from "../../../functions/GetCurrent";
 import {
-  favoriteCities,
   globalAdvancedState,
   measuringUnit,
-} from "../recoil/atoms";
+  favoriteCities,
+} from "../../../recoil/atoms";
 
 type cityProps = {
   city: string;
@@ -18,7 +15,7 @@ type cityProps = {
 
 export default function CurrentWeather({ city }: cityProps) {
   const [showAdvanced, setShowAdvanced] = useRecoilState(globalAdvancedState);
-  const [metric, setMetric] = useRecoilState(measuringUnit);
+  const [metric] = useRecoilState(measuringUnit);
 
   const [favoriteCitiesList, setFavoriteCitiesList] =
     useRecoilState(favoriteCities);

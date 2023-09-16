@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { hour } from "../../public/interfaces/IWeatherAPI";
-import { measuringUnit } from "../recoil/atoms";
 import { useRecoilState } from "recoil";
 import "./Forecast.css";
+import { hour } from "../../../../public/interfaces/IWeatherAPI";
+import { measuringUnit } from "../../../recoil/atoms";
 
 type forecastHourProps = {
   hours: hour[];
@@ -10,7 +9,7 @@ type forecastHourProps = {
 };
 
 export default function ForecastHours({ hours, preview }: forecastHourProps) {
-  const [metric, setMetric] = useRecoilState(measuringUnit);
+  const [metric] = useRecoilState(measuringUnit);
   const classname = preview ? "ForecastHours_preview" : "forecastHour";
   let count = 0;
 

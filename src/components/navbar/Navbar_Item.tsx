@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 interface INavPage {
   newPath: string;
   header: string;
@@ -8,10 +7,7 @@ interface INavPage {
 
 function Navbar_Item({ newPath, header }: INavPage) {
   return (
-    <NavLink
-      to={newPath}
-      className="navbar-item"
-    >
+    <NavLink to={newPath} className="navbar-item">
       {header}
     </NavLink>
   );

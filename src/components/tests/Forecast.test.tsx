@@ -4,7 +4,7 @@ import { RecoilRoot } from "recoil";
 import { describe, expect, test } from "vitest";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../../test/setup";
-import Forecast from "../../pages/Forecast";
+import Forecast from "../city/forecast/Forecast";
 
 describe("City", () => {
   test("Should show the forecast for London", async () => {

@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
-import getSearch from "../functions/GetSearch";
-import ICity from "../../public/interfaces/CitySearch";
-import { NavLink, useNavigate } from "react-router-dom";
+import getSearch from "../../../functions/GetSearch";
+import ICity from "../../../../public/interfaces/CitySearch";
+import { useNavigate } from "react-router-dom";
 import "./CityProposal.css";
 
 type CityProposalProps = {

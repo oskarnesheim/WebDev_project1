@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { forecastday } from "../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";
-import "./City.css";
+import "../City.css";
 import "./Forecast.css";
+import { forecastday } from "../../../../public/interfaces/IWeatherAPI";
 
 type forecastDayProps = {
   day: forecastday;
@@ -11,7 +10,6 @@ type forecastDayProps = {
 
 export default function ForceastDay({ day }: forecastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
-  const [display, setDisplay] = useState<string>(getDisplay(showHours));
 
   function getDisplay(showPreview: boolean) {
     return !showPreview ? "flex" : "none";
@@ -22,14 +20,14 @@ export default function ForceastDay({ day }: forecastDayProps) {
     return isNaN(dayOfWeek)
       ? null
       : [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ][dayOfWeek];
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ][dayOfWeek];
   }
 
   return (

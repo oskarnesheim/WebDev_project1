@@ -3,7 +3,7 @@ import { describe, expect, test, it } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import userEvent from "@testing-library/user-event";
-import Navbar from "../Navbar";
+import Navbar from "../navbar/Navbar";
 
 describe("Navbar", () => {
   test("Renders everything in the navbar", () => {
