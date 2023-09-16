@@ -35,6 +35,9 @@ export default function CurrentWeather({ city }: cityProps) {
     } else {
       favorites.splice(favorites.indexOf(city!), 1);
     }
+    while (favorites.length > 5) {
+      favorites.shift();
+    }
     localStorage.setItem("favorites", JSON.stringify(favorites));
     setFavoriteCitiesList(favorites);
     setStarSymbol(getCityStatus(city!));
@@ -77,7 +80,7 @@ export default function CurrentWeather({ city }: cityProps) {
         </span>
         <div className="temperature">
           {metric ? data.current.temp_c + "C" : data.current.temp_f + "F"}
-          <img 
+          <img
             className="weather-icon"
             src={data.current.condition.icon}
             alt=""
@@ -88,14 +91,14 @@ export default function CurrentWeather({ city }: cityProps) {
         </button>
       </div>
       {showAdvanced && (
-        <div  className="advanced-info">
-          <div  className="weather-info-item">
+        <div className="advanced-info">
+          <div className="weather-info-item">
             Direction: {data.current.wind_dir} -{" "}
             {metric
               ? (data.current.wind_kph / 3.6).toPrecision(2) + " Kph"
               : (data.current.wind_mph / 3.6).toPrecision(2) + " Mph"}
           </div>
-          <div  className="weather-info-item">
+          <div className="weather-info-item">
             Humidity: {data.current.humidity}%
             <br />
             Cloud: {data.current.cloud}%
