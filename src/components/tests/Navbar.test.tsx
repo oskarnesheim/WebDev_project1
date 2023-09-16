@@ -1,13 +1,13 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, test } from "vitest";
+import { render } from "@testing-library/react";
+import { describe, expect, test, it } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import userEvent from "@testing-library/user-event";
 import Navbar from "../Navbar";
 
 describe("Navbar", () => {
-  test("Should show the navbar?", () => {
-    render(
+  test("Renders everything in the navbar", () => {
+    const scr = render(
       <BrowserRouter>
         <RecoilRoot>
           <Navbar />
@@ -15,15 +15,37 @@ describe("Navbar", () => {
       </BrowserRouter>
     );
     //Check if all the links are there
-    expect(screen.getByText("Weathersearcher")).toBeDefined();
-    expect(screen.getByText("Home")).toBeDefined();
-    expect(screen.getByText("Metric")).toBeDefined();
+    expect(scr.getByText("Weathersearcher")).toBeDefined();
+    expect(scr.getByText("Home")).toBeDefined();
+    expect(scr.getByText("Metric")).toBeDefined();
 
     //Check if the metric/imperial button works
-    expect(screen.queryByText("Imperial")).toBeNull();
-    userEvent.click(screen.getByText("Metric"));
-    expect(screen.getByText("Imperial")).toBeDefined();
-    userEvent.click(screen.getByText("Imperial"));
-    expect(screen.getByText("Metric")).toBeDefined();
+    expect(scr.queryByText("Imperial")).toBeNull();
+    userEvent.click(scr.getByText("Metric"));
+    expect(scr.getByText("Imperial")).toBeDefined();
+    userEvent.click(scr.getByText("Imperial"));
+    expect(scr.getByText("Metric")).toBeDefined();
+
+    //Check if the links work properly
+    const home_url = window.location.href;
+    userEvent.click(scr.getByText("Home"));
+    expect(home_url == window.location.href).toBeTruthy();
+
+    const logo_url = window.location.href;
+    userEvent.click(scr.getByText("Home"));
+    expect(logo_url == window.location.href).toBeTruthy();
+  });
+});
+
+describe("Navbar snapshot test", () => {
+  it("Snapshot match", () => {
+    const result = render(
+      <BrowserRouter>
+        <RecoilRoot>
+          <Navbar />
+        </RecoilRoot>
+      </BrowserRouter>
+    );
+    expect(result).toMatchSnapshot();
   });
 });
