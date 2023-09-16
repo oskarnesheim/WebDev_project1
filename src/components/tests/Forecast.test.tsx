@@ -1,27 +1,25 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import { describe, expect, test, vitest } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import CityProposal from "../CityProposal";
+import { describe, expect, test } from "vitest";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../../test/setup";
+import Forecast from "../../pages/Forecast";
 
-const CITY = "London";
-const SETCITY = vitest.fn();
-
-describe("CityProposal", () => {
-  test("Should show proposed cities", async () => {
+describe("City", () => {
+  test("Should show the forecast for London", async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <RecoilRoot>
-            <CityProposal setCity={SETCITY} city={CITY} />
+            <Forecast />
           </RecoilRoot>
         </BrowserRouter>
       </QueryClientProvider>
     );
+
     await waitFor(() => {
-      expect(screen.findAllByAltText("London")).toBeDefined();
+      expect(screen.findAllByTitle("London")).toBeDefined();
     });
   });
 });

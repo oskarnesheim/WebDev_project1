@@ -11,7 +11,7 @@ function CityInput({ updateSearch, currentSearch }: CityInputProps) {
     <div className="input-container">
       <input
         type="text"
-        id="cityName"
+        id="city_input"
         value={currentSearch}
         onChange={(event) => updateSearch(event.target.value)}
         placeholder="E.g., New York"

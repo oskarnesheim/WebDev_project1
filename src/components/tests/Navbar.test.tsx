@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 import Navbar from "../Navbar";
 
 describe("Navbar", () => {
-  test("Should show input-container", () => {
+  test("Should show the navbar?", () => {
     render(
       <BrowserRouter>
         <RecoilRoot>
