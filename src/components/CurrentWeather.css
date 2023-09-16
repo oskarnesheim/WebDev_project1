@@ -2,59 +2,104 @@
 
 /* Style for the container div */
 .current-weather-container {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for location header */
+.location-header {
+  font-size: 24px;
+  margin: 0;
+  color: rgb(60, 153, 235);
+}
+
+/* Style for location region and country */
+.location-region {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Style for temperature */
+.temperature {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style for condition icon */
+.condition-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+/* Style for the Show/Hide button */
+.toggle-button {
+  background-color: rgb(60, 153, 235);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Style for the advanced weather info */
+.advanced-info {
+  margin-top: 20px;
+}
+
+/* Style for individual weather info items */
+.weather-info-item {
+  margin-top: 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Media query for screens with a maximum width of 390px (mobile phones) */
+@media (max-width: 390px) {
+  .current-weather-container {
+    padding: 10px;
   }
-  
-  /* Style for location header */
+
+  .current-weather-container {
+    padding: 10px;
+  }
+
   .location-header {
-    font-size: 24px;
-    margin: 0;
-    color: rgb(60, 153, 235);
+    font-size: 20px;
   }
-  
-  /* Style for location region and country */
+
   .location-region {
-    font-size: 16px;
-    color: #777;
+    font-size: 14px;
   }
-  
-  /* Style for temperature */
+
   .temperature {
-    font-size: 36px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  /* Style for condition icon */
-  .condition-icon {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-  }
-  
-  /* Style for the Show/Hide button */
-  .toggle-button {
-    background-color: rgb(60, 153, 235);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  /* Style for the advanced weather info */
-  .advanced-info {
-    margin-top: 20px;
-  }
-  
-  /* Style for individual weather info items */
-  .weather-info-item {
+    font-size: 28px;
     margin-top: 5px;
-    font-size: 18px;
-    color: #333;
+    overflow: hidden;
   }
-  
+
+  .condition-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    overflow-x: hidden;
+  }
+
+  .toggle-button {
+    padding: 3px 8px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .advanced-info {
+    margin-top: 10px;
+  }
+
+  .weather-info-item {
+    font-size: 16px;
+  }
+}

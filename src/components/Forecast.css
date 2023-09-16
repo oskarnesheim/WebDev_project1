@@ -1,4 +1,4 @@
-/* Forcast.css */
+/* Forecast.css */
 
 /* Style for the container div */
 .ForecastDay {
@@ -7,8 +7,8 @@
   background-color: #f5f5f5;
   padding: 15px;
   margin: 15px;
-  /* border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for the day and date */
@@ -37,4 +37,45 @@
   margin-left: 20px;
   font-size: 35px;
   color: #333;
+}
+
+/* Style for the condition icon */
+.condition-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Style for the timestamp */
+.time {
+  font-size: 15px;
+  color: #777;
+  margin-left: 10px;
+}
+
+/* Style for the additional info container */
+.additional-info {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #777;
+}
+
+
+/* Media query for screens with a maximum width of 390px (mobile phones) */
+@media (max-width: 390px) {
+
+  .ForecastDay_preview {
+    font-size: 16px;
+  }
+
+  .ForecastHours_preview {
+    display: none;
+  }
+
+  .temperature {
+    font-size: 28px;
+    margin-left: 10px;
+  }
+
 }
