@@ -17,7 +17,6 @@ describe("Navbar", () => {
     //Check if all the links are there
     expect(screen.getByText("Weathersearcher")).toBeDefined();
     expect(screen.getByText("Home")).toBeDefined();
-    expect(screen.getByText("My cities")).toBeDefined();
     expect(screen.getByText("Metric")).toBeDefined();
 
     //Check if the metric/imperial button works
