@@ -17,7 +17,9 @@ function Home() {
         <div className="favorites_preview">
           {favoriteCitiesList.length !== 0 ? (
             favoriteCitiesList.map((city) => {
-              return <FavoritePreview city={city} />;
+              return (
+                <FavoritePreview key={city + "_favorite_preview"} city={city} />
+              );
             })
           ) : (
             <div>

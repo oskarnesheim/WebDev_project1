@@ -23,7 +23,7 @@ function Forecast() {
 
   return (
     <div>
-      <h3>Next 10 days:</h3>
+      <h3>Next 3 days:</h3>
       {data.forecast.forecastday.map((forecastDay) => {
         return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
       })}
