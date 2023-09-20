@@ -1,8 +1,8 @@
 # WeatherSearcher
 
-The **WeatherSearcher** app is a simple yet powerful tool that allows you to access accurate weather forecasts for your favorite locations. Whether you want to plan your day, week, or a future trip, WeatherSearcher has got you covered.
+The **WeatherSearcher** app is a simple yet powerful tool that allows you to access accurate weather forecasts for your desired locations.
 
-In this app, you can add up to 5 cities to your list of favorites, making it easy to keep tabs on the weather in multiple locations. Your favorite cities will be saved for your convenience the next time you visit the page. Additionally, WeatherSearcher provides a settings option that allows you to choose between the metric system (default) and the imperial system, ensuring that you get weather information in the units you prefer.
+In this app, you can add up to 5 cities to your list of favorites, making it easy to keep tabs on the weather in multiple locations. Your favorite cities will be saved for your convenience the next time you visit the page. Additionally, WeatherSearcher provides a settings option that allows you to choose between the metric system (default) and the imperial system, ensuring that you get weather information in the units you prefer. We initially wanted to show the forecast for the upcoming 10 days, but the API we're currently using doesn't offer forecasts for more than 3 days in the future unless we pay for it.
 
 ## Running the App
 
@@ -20,23 +20,24 @@ To run the WeatherSearcher app on your local machine, follow these simple steps:
    npm run dev
    ```
 
-3. Open your preferred web browser and navigate to the app by visiting [http://localhost:3000](http://localhost:3000).
-
-Now, you can explore the weather forecasts for your favorite places with ease!
+3. Open in browser by writing:
+   ```
+   o
+   ```
+   Now, you can explore the weather forecasts for your favorite places with ease!
 
 # Testing
 
-Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have implemented a comprehensive testing strategy that covers various aspects of the app, including component testing, snapshot testing, and mocking API calls.
+Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have adopted a thorough testing approach that encompasses several vital aspects of our application, which include component testing, snapshot testing, and the strategic use of mock API calls.
 
 In addition to standard testing, we've also paid special attention to responsiveness by conducting tests on a range of devices, including:
 
+- Acer Swift 3 SF314-59 14"
 - Macbook Pro 13"
 - Macbook Pro 14"
 - Macbook Air 13"
 - iPhone 12 Pro
-- Vidar sin gamle PC
--
-- (FYLL UT FLERE!)
+- iPhone 13
 
 ## Running the Tests
 
@@ -52,4 +53,29 @@ To run the tests and verify the app's functionality and responsiveness, follow t
 
 2. Alternatively, you can access a more detailed test coverage report by opening the `index.html` file located under the `coverage/` directory in your project's root folder.
 
-With our robust testing approach, we aim to deliver a reliable and user-friendly weather forecasting experience through WeatherSearcher. If you encounter any issues or have suggestions for improvement, please feel free to reach out to us. Your feedback is highly valued!
+With our robust testing approach, we aim to deliver a reliable and user-friendly weather forecasting experience through WeatherSearcher.
+
+# Requirements
+
+## Functional Requirements
+
+- _The user should be presented with one reseoource at a time, but should have the option to navigate back and forth, and to jump to a specific resource (e.g. by choosing from a list)._<br>
+  **The user is presented with it's favorites and can go back and forth between them. In addition a user can search for a favorite city.**
+- _A user should be able to make a choice (e.g. filtering or sorting) that affects the selection of what is presented and how it is presented. These choices should be remembered even if the page is reloaded._<br>
+  **We have implemented both localstorage and sessionstorage saving. Favorites will be saved with localstorage until next time you visit the webpage, while metric/imperial will only be saved during the session. At first we implemented saving of metric/imperial as a localstorage, but to meet the requirements we changed it to sessionstorage.**
+
+- _A user should be able to choose favorites by for example clicking on a star or a heart. Choices should be remembered even if the browser is closed and restarted._<br>
+  **A user can choose favorites by clicking on the star after the cityname. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.**
+- _The page should be responsive and work well on both desktop and mobile devices._<br>
+  **The page is responsive and works well on both desktop and mobile devices. NB: We have only tested on the devices listed under testing**
+- _The page should have an aesthetic and tidy design (this is subjective, but we are looking for you to have put some work into styling the page)._ <br>
+  **We have put a lot of work into styling the page. We have used a lot of time to make the page look good and we are very happy with the result.**
+
+## Technichal Requirements
+
+- _The solution is based on Typescript and React._ **Done**<br>
+- _The solution uses React state and props._ **Done**<br>
+- _The solution fetches data from a REST API and uses TanStack Query._ **Done**<br>
+- _The solution uses HTML Web storage API (both localstorage and sessionstorage), alternatively you can also use the IndexedDB API._ **Done**<br>
+- _The solution uses React Router._ **Done**<br>
+- _The solution has responsive design._ **Done**<br>
