@@ -7,9 +7,9 @@ export default function MetricChooser() {
   function toggleMeasuringUnit() {
     setMetric(!metric);
     if (metric) {
-      localStorage.setItem("metric", JSON.stringify(false));
+      sessionStorage.setItem("metric", JSON.stringify(false));
     } else {
-      localStorage.setItem("metric", JSON.stringify(true));
+      sessionStorage.setItem("metric", JSON.stringify(true));
     }
   }
 

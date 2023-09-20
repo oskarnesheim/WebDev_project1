@@ -6,9 +6,9 @@ export const measuringUnit = atom({
 });
 
 function getMeasuringUnit() {
-  const metric: boolean = JSON.parse(localStorage.getItem("metric")!);
+  const metric: boolean = JSON.parse(sessionStorage.getItem("metric")!);
   if (metric === null) {
-    localStorage.setItem("metric", JSON.stringify(true));
+    sessionStorage.setItem("metric", JSON.stringify(true));
     return true;
   }
   return metric;
@@ -20,12 +20,12 @@ export const favoriteCities = atom({
 });
 
 function getFavorites() {
-    let favorites: string[] = [];
-    if (localStorage.getItem("favorites")) {
-      favorites = JSON.parse(localStorage.getItem("favorites")!);
-    }
-    return favorites;
+  let favorites: string[] = [];
+  if (localStorage.getItem("favorites")) {
+    favorites = JSON.parse(localStorage.getItem("favorites")!);
   }
+  return favorites;
+}
 
 export const globalAdvancedState = atom({
   key: "globalAdvancedState", // unique ID (with respect to other atoms/selectors)
@@ -33,11 +33,9 @@ export const globalAdvancedState = atom({
 });
 
 function getAdvanced() {
-    let showAdvanced: boolean = false;
-    if (localStorage.getItem("showAdvanced")) {
-      showAdvanced = JSON.parse(localStorage.getItem("showAdvanced")!);
-    }
-    return showAdvanced;
+  let showAdvanced: boolean = false;
+  if (localStorage.getItem("showAdvanced")) {
+    showAdvanced = JSON.parse(localStorage.getItem("showAdvanced")!);
   }
-
-
+  return showAdvanced;
+}
