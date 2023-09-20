@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <div className="sidebar ">
       <h1 onClick={() => navigate("/")} className="">
-        Weathersearcher
+        WeatherSearcher
       </h1>
       <nav className="NavLinks">
         <Navbar_Item newPath="/" header="Home" />

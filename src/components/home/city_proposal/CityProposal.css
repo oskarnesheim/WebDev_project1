@@ -2,21 +2,43 @@
 
 /* Style for the container */
 .city-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 /* Style for individual city items */
 .city-item {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
+  .city-info {
+    color: #77b8f1;
+  }
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  color: #50a3ed;
+}
+
+.city-item:hover {
+  color: #9bdfff;
+  .city-info {
+    color: #d8f2fe;
+  }
 }
 
 /* Style for the city item when it is selected */
 .city-item-selected {
-    color: #9bdfff;
+  color: #9bdfff;
 }
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+

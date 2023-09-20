@@ -61,10 +61,8 @@
   color: #777;
 }
 
-
 /* Media query for screens with a maximum width of 390px (mobile phones) */
-@media (max-width: 390px) {
-
+@media (max-width: 500px) {
   .ForecastDay_preview {
     font-size: 16px;
   }
@@ -77,5 +75,4 @@
     font-size: 28px;
     margin-left: 10px;
   }
-
 }

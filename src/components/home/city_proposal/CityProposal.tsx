@@ -37,7 +37,12 @@ function CityProposal({ city, setCity }: CityProposalProps) {
             className="city-item"
             key={cityProposal.id}
           >
-            {cityProposal.name} - {cityProposal.region} - {cityProposal.country}{" "}
+            <ul>
+              <li>{cityProposal.name}</li>
+              <li className="city-info">{cityProposal.region}</li>
+              <li className="city-info">{cityProposal.country}</li>
+            </ul>
+            {/* {cityProposal.name} - {cityProposal.region} - {cityProposal.country}{" "} */}
           </div>
         ))}
     </div>

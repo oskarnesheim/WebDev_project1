@@ -8,6 +8,7 @@ import {
   measuringUnit,
   favoriteCities,
 } from "../../../recoil/atoms";
+import "./CurrentWeather.css";
 
 type cityProps = {
   city: string;
@@ -67,13 +68,13 @@ export default function CurrentWeather({ city }: cityProps) {
     <div className="current-weather-container">
       <div>
         <span className="location">
-          <h1 className="location-header">
-            {data.location.name} -
-            <button onClick={() => toggleFavorite()}>{starSymbol}</button>
-          </h1>
+          <h1 className="location-header">{data.location.name}</h1>
           <p className="location-region">
             {data.location.region}/{data.location.country}
           </p>
+          <button className="favourite-btn" onClick={() => toggleFavorite()}>
+            {starSymbol}
+          </button>
         </span>
         <div className="temperature">
           {metric ? data.current.temp_c + "C" : data.current.temp_f + "F"}
@@ -83,29 +84,30 @@ export default function CurrentWeather({ city }: cityProps) {
             alt=""
           />
         </div>
-        <button onClick={() => toggleAdvanced()}>
+        <button className="advanced-btn" onClick={() => toggleAdvanced()}>
           {showAdvanced ? "Hide Andvanced" : "Show Andvanced"}
         </button>
       </div>
       {showAdvanced && (
         <div className="advanced-info">
           <div className="weather-info-item">
-            Direction: {data.current.wind_dir} -{" "}
+            Wind (direction):&nbsp;
             {metric
               ? (data.current.wind_kph / 3.6).toPrecision(2) + " Kph"
               : (data.current.wind_mph / 3.6).toPrecision(2) + " Mph"}
+            &nbsp;({data.current.wind_dir})
           </div>
           <div className="weather-info-item">
-            Humidity: {data.current.humidity}%
+            Humidity:&nbsp; {data.current.humidity}%
             <br />
-            Cloud: {data.current.cloud}%
+            Cloud:&nbsp; {data.current.cloud}%
             <br />
-            Feels like:
+            Feels like: &nbsp;
             {metric
               ? data.current.feelslike_c + "C"
               : data.current.feelslike_f + "F"}
             <br />
-            UV: {data.current.uv}
+            UV:&nbsp; {data.current.uv}
           </div>
         </div>
       )}

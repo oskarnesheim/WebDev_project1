@@ -11,7 +11,7 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
         <h1
           class=""
         >
-          Weathersearcher
+          WeatherSearcher
         </h1>
         <nav
           class="NavLinks"
@@ -23,7 +23,9 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
           >
             Home
           </a>
-          <button>
+          <button
+            class="metimp-btn"
+          >
             Metric
           </button>
         </nav>
@@ -36,7 +38,7 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
         <h1
           class=""
         >
-          Weathersearcher
+          WeatherSearcher
         </h1>
         <nav
           class="NavLinks"
@@ -48,7 +50,9 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
           >
             Home
           </a>
-          <button>
+          <button
+            class="metimp-btn"
+          >
             Metric
           </button>
         </nav>
@@ -62,7 +66,7 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
       <h1
         class=""
       >
-        Weathersearcher
+        WeatherSearcher
       </h1>
       <nav
         class="NavLinks"
@@ -74,7 +78,9 @@ exports[`Navbar snapshot test > Snapshot match 1`] = `
         >
           Home
         </a>
-        <button>
+        <button
+          class="metimp-btn"
+        >
           Metric
         </button>
       </nav>

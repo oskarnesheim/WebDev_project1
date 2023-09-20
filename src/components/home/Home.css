@@ -2,68 +2,71 @@
 
 /* Style for the container div */
 .home-container {
-    margin-left: 0%;
-    margin-top: 10%;
-    text-align: center;
+  margin-left: 0%;
+  margin-top: 10%;
+  text-align: center;
 }
 
 /* Style for the heading */
 .home-heading {
-    font-weight: bold;
-    font-size: 36px;
-    color: #000000;
+  font-weight: bold;
+  font-size: 36px;
+  color: #000000;
 }
 
 /* Style for the section containing weather search */
 .home-section {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 /* Style for the h3 element */
 .home-subheading {
-    font-weight: bold;
-    font-size: 24px;
-    color: #50c8ff;
+  font-weight: bold;
+  font-size: 24px;
+  color: #50c8ff;
 }
 
 /* Style for the favorites preview section */
 .favorites_preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0 10px;
 }
 
 /* Style for individual city previews */
 .city_preview {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.city_preview:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Media query for screens with a maximum width of 390px (mobile phones) */
 @media (max-width: 390px) {
+  .home-heading {
+    font-size: 24px;
+  }
 
-    .home-heading {
-        font-size: 24px;
-    }
+  .home-subheading {
+    font-size: 18px;
+  }
 
-    .home-subheading {
-        font-size: 18px;
-    }
+  .favorites_preview {
+    padding: 0 5px;
+    margin-top: 90px;
+  }
 
-    .favorites_preview {
-        padding: 0 5px;
-        margin-top: 90px;
-    }
-
-    .city_preview {
-        margin: 5px;
-        padding: 5px;
-    }
+  .city_preview {
+    margin: 5px;
+    padding: 5px;
+  }
 }
