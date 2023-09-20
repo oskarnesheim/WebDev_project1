@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../../recoil/atoms";
+import "./Navbar.css";
 
 export default function MetricChooser() {
   const [metric, setMetric] = useRecoilState(measuringUnit);
@@ -14,7 +15,7 @@ export default function MetricChooser() {
   }
 
   return (
-    <button onClick={() => toggleMeasuringUnit()}>
+    <button className="metimp-btn" onClick={() => toggleMeasuringUnit()}>
       {metric ? "Metric" : "Imperial"}
     </button>
   );
