@@ -6,13 +6,14 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
 }
 
 /* Style for location header */
 .location-header {
   font-size: 24px;
   margin: 0;
-  color: rgb(60, 153, 235);
+  color: #245c8d;
 }
 
 /* Style for location region and country */
@@ -56,6 +57,38 @@
   margin-top: 5px;
   font-size: 18px;
   color: #333;
+}
+
+.favourite-btn {
+  background-color: rgb(60, 153, 235);
+  box-shadow: 2px 2px 2px #0000;
+  border: none;
+  border-radius: 10%;
+  color: #ffffff;
+}
+
+.favourite-btn:hover {
+  background-color: #9bdfff;
+  box-shadow: 0.5px 0.5px 0.5px #0000;
+  border: none;
+  border-radius: 2%;
+  color: #ffffff;
+}
+
+.advanced-btn {
+  background-color: #ecf5fd;
+  box-shadow: 2px 2px 2px #0000;
+  border: none;
+  border-radius: 5%;
+  color: #245c8d;
+}
+
+.advanced-btn:hover {
+  background-color: #9bdfff;
+  box-shadow: 0.5px 0.5px 0.5px #0000;
+  border: none;
+  border-radius: 5%;
+  color: #245c8d;
 }
 
 /* Media query for screens with a maximum width of 390px (mobile phones) */
