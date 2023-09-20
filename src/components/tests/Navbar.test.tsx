@@ -15,7 +15,7 @@ describe("Navbar", () => {
       </BrowserRouter>
     );
     //Check if all the links are there
-    expect(scr.getByText("Weathersearcher")).toBeDefined();
+    expect(scr.getByText("WeatherSearcher")).toBeDefined();
     expect(scr.getByText("Home")).toBeDefined();
     expect(scr.getByText("Metric")).toBeDefined();
 
