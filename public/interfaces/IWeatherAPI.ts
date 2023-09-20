@@ -1,4 +1,3 @@
-
 export interface ICurrentWeatherData {
   location: location;
   current: current;
