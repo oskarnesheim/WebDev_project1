@@ -1,4 +1,4 @@
-****# WeatherSearcher
+# WeatherSearcher
 
 The **WeatherSearcher** app is a simple yet powerful tool that allows you to access accurate weather forecasts for your favorite locations. Whether you want to plan your day, week, or a future trip, WeatherSearcher has got you covered.
 
@@ -10,15 +10,15 @@ To run the WeatherSearcher app on your local machine, follow these simple steps:
 
 1. First, make sure you have all the necessary dependencies by running:
 
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 
 2. Once the dependencies are installed, start the development server by running:
 
-    ```
-    npm run dev
-    ```
+   ```
+   npm run dev
+   ```
 
 3. Open your preferred web browser and navigate to the app by visiting [http://localhost:3000](http://localhost:3000).
 
@@ -26,7 +26,7 @@ Now, you can explore the weather forecasts for your favorite places with ease!
 
 # Testing
 
-Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have implemented a comprehensive testing strategy that covers various aspects of the app, including component testing, snapshot testing, and mocking API calls. 
+Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have implemented a comprehensive testing strategy that covers various aspects of the app, including component testing, snapshot testing, and mocking API calls.
 
 In addition to standard testing, we've also paid special attention to responsiveness by conducting tests on a range of devices, including:
 
@@ -35,7 +35,7 @@ In addition to standard testing, we've also paid special attention to responsive
 - Macbook Air 13"
 - iPhone 12 Pro
 - Vidar sin gamle PC
-- 
+-
 - (FYLL UT FLERE!)
 
 ## Running the Tests
@@ -44,9 +44,9 @@ To run the tests and verify the app's functionality and responsiveness, follow t
 
 1. Open your terminal and run the following command:
 
-    ```
-    npm test
-    ```
+   ```
+   npm test
+   ```
 
    This will execute the test suite and provide you with test coverage results in the terminal.
 
