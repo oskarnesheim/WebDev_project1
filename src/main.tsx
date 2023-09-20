@@ -35,7 +35,9 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+],
+{basename: "/project1"}
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <QueryClientProvider client={queryClient}>
