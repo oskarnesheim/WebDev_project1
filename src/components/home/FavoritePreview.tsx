@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
-import getCurrent from "../functions/GetCurrent";
+import { ICurrentWeatherData } from "../../../public/interfaces/IWeatherAPI";
+import getCurrent from "../../functions/GetCurrent";
 import { useRecoilState } from "recoil";
-import { measuringUnit } from "../recoil/atoms";
+import { measuringUnit } from "../../recoil/atoms";
 import "./Home.css";
 
 type FavoritePreviewProps = {
@@ -12,7 +11,7 @@ type FavoritePreviewProps = {
 };
 
 export default function FavoritePreview({ city }: FavoritePreviewProps) {
-  const [metric, setMetric] = useRecoilState(measuringUnit);
+  const [metric] = useRecoilState(measuringUnit);
   const navigate = useNavigate();
 
   const { isLoading, isError, data, error } = useQuery<

@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { measuringUnit } from "../recoil/atoms";
+import { measuringUnit } from "../../recoil/atoms";
 
 export default function MetricChooser() {
   const [metric, setMetric] = useRecoilState(measuringUnit);
@@ -14,10 +14,8 @@ export default function MetricChooser() {
   }
 
   return (
-    <>
-      <button onClick={() => toggleMeasuringUnit()}>
-        {metric ? "Metric" : "Imperial"}
-      </button>
-    </>
+    <button onClick={() => toggleMeasuringUnit()}>
+      {metric ? "Metric" : "Imperial"}
+    </button>
   );
 }

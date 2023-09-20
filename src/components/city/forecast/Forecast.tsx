@@ -1,15 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import getForecast from "../functions/GetForecast";
+import getForecast from "../../../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
-import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
+import { IWeatherForeCastData } from "../../../../public/interfaces/IWeatherAPI";
 import { useParams } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { measuringUnit } from "../recoil/atoms";
-import ForecastDay from "../components/ForecastDay";
+import ForecastDay from "./ForecastDay";
 
 function Forecast() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
-  const [metric, setMetric] = useRecoilState(measuringUnit);
 
   const { isLoading, isError, data, error } = useQuery<
     IWeatherForeCastData,
@@ -27,7 +23,7 @@ function Forecast() {
 
   return (
     <div>
-      <h3>Next 10 days:</h3>
+      <h3>Next 3 days:</h3>
       {data.forecast.forecastday.map((forecastDay) => {
         return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
       })}

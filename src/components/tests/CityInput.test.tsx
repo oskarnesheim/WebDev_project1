@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, test, vitest } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import CityInput from "../CityInput";
+import CityInput from "../home/city_input/CityInput";
 
 const CITY = "London";
 const UPDATED_CITY = "Oslo";

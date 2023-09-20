@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, test, vitest } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
-import CityProposal from "../CityProposal";
+import CityProposal from "../home/city_proposal/CityProposal";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "../../test/setup";
 

@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useNavigate } from "react-router-dom";
 import Navbar_Item from "./Navbar_Item";
-import MetricChooser from "./MetricChooser";
+
 import "./Navbar.css";
+import MetricChooser from "./MetricChooser";
 
 function Navbar() {
   const navigate = useNavigate();

@@ -1,9 +1,6 @@
 import axios from "axios";
 import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-
 async function getData(API_request:string): Promise<ICurrentWeatherData> {
     return await axios
       .get(API_request)

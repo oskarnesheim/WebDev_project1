@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { forecastday } from "../../public/interfaces/IWeatherAPI";
+import { forecastday, hour } from "../../../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";
-import "./City.css";
+import "../City.css";
 import "./Forecast.css";
 
 type forecastDayProps = {
@@ -11,7 +11,7 @@ type forecastDayProps = {
 
 export default function ForceastDay({ day }: forecastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
-  const [display, setDisplay] = useState<string>(getDisplay(showHours));
+  let count = 0;
 
   function getDisplay(showPreview: boolean) {
     return !showPreview ? "flex" : "none";
@@ -22,14 +22,14 @@ export default function ForceastDay({ day }: forecastDayProps) {
     return isNaN(dayOfWeek)
       ? null
       : [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ][dayOfWeek];
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ][dayOfWeek];
   }
 
   return (
@@ -45,12 +45,31 @@ export default function ForceastDay({ day }: forecastDayProps) {
             display: getDisplay(showHours),
           }}
         >
-          <ForecastHours key={day.date_epoch} hours={day.hour} preview={true} />
+          {day.hour.map((h: hour) => {
+            return (
+              <ForecastHours
+                key={day.date_epoch + count}
+                hour={h}
+                preview={true}
+                count={count++}
+              />
+            );
+          })}
         </div>
       </div>
-
       {showHours && (
-        <ForecastHours key={day.date_epoch} hours={day.hour} preview={false} />
+        <div className="ForecastHours">
+          {day.hour.map((h: hour) => {
+            return (
+              <ForecastHours
+                key={day.date_epoch + count++}
+                hour={h}
+                preview={false}
+                count={0}
+              />
+            );
+          })}
+        </div>
       )}
     </div>
   );

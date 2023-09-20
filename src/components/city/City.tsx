@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Outlet, useParams } from "react-router-dom";
-import CurrentWeather from "../components/CurrentWeather";
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import CurrentWeather from "./current/CurrentWeather";
 
 function City() {
   const { city } = useParams();
