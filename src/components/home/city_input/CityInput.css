@@ -1,0 +1,34 @@
+/* CityInput.css */
+
+/* Style for the container div */
+.input-container {
+    margin-top: 1rem;
+}
+
+/* Style for the label */
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Style for the input field */
+input[type="text"] {
+    width: 250px;
+    padding: 0.5rem;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Style for the placeholder text */
+input[type="text"]::placeholder {
+    color: rgb(60, 153, 235);
+}
+
+/* Style for the input field when it's focused */
+input[type="text"]:focus {
+    border-color: rgb(60, 153, 235);
+}

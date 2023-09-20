@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import "./CityInput.css";
+
 type CityInputProps = {
   updateSearch: React.Dispatch<React.SetStateAction<string>>;
   currentSearch: string;
@@ -6,11 +7,10 @@ type CityInputProps = {
 
 function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
-    <div className="my-5">
-      <label htmlFor="cityName">Enter City Name:</label>
+    <div className="input-container">
       <input
         type="text"
-        id="cityName"
+        id="city_input"
         value={currentSearch}
         onChange={(event) => updateSearch(event.target.value)}
         placeholder="E.g., New York"

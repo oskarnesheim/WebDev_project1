@@ -1,8 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import getForecast from "../functions/GetForecast";
+import getForecast from "../../../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
-import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
+import { IWeatherForeCastData } from "../../../../public/interfaces/IWeatherAPI";
 import { useParams } from "react-router-dom";
+import ForecastDay from "./ForecastDay";
 
 function Forecast() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
@@ -23,7 +23,10 @@ function Forecast() {
 
   return (
     <div>
-      <h2>This is the forcast for {data.location.name}</h2>
+      <h3>Next 3 days:</h3>
+      {data.forecast.forecastday.map((forecastDay) => {
+        return <ForecastDay key={forecastDay.date_epoch} day={forecastDay} />;
+      })}
     </div>
   );
 }

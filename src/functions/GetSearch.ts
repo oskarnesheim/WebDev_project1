@@ -1,9 +1,6 @@
 import axios from "axios";
 import ICity from "../../public/interfaces/CitySearch";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-
 async function getData(API_request:string): Promise<ICity[]> {
     return await axios
       .get(API_request)

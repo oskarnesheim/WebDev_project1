@@ -1,0 +1,60 @@
+/* Navbar.css */
+
+/* Style for the sidebar container */
+.sidebar {
+    background-color: rgb(60, 153, 235);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the app name */
+.sidebar h1 {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+/* Style for the navigation links */
+.NavLinks {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Style for individual navigation items */
+.NavLinks a {
+    margin-right: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+/* Style for hover effect (common for both app name and navigation links) */
+.sidebar h1:hover,
+.NavLinks a:hover {
+    color: #9bdfff;
+}
+
+/* Media query for screens with a maximum width of 390px (mobile phones) */
+@media (max-width: 390px) {
+
+    .sidebar h1 {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+
+    .NavLinks a {
+        font-size: 1rem;
+        margin: 0 0.5rem;
+        justify-content: center;
+    }
+}
