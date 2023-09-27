@@ -11,7 +11,7 @@ function Forecast() {
     IWeatherForeCastData,
     Error
   >({
-    queryKey: [city + "forecast"],
+    queryKey: [city + "_forecast"],
     queryFn: () => getForecast(city!),
   });
   if (isLoading) {

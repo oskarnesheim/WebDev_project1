@@ -12,7 +12,7 @@ type CityProposalProps = {
 function CityProposal({ city, setCity }: CityProposalProps) {
   const navigate = useNavigate();
   const { isLoading, isError, data, error } = useQuery<ICity[], Error>({
-    queryKey: [city + "proposal"],
+    queryKey: [city + "_proposal"],
     queryFn: () => getSearch(city),
   });
 
@@ -20,8 +20,8 @@ function CityProposal({ city, setCity }: CityProposalProps) {
     return <div>Loading</div>;
   }
 
-  if (isError && error.message === '[""] data is undefined') {
-    return <div>Error</div>;
+  if (isError) {
+    return <div>{error.message}</div>;
   }
 
   return (
@@ -32,7 +32,7 @@ function CityProposal({ city, setCity }: CityProposalProps) {
             onClick={(e) => {
               e.preventDefault();
               setCity("");
-              navigate(cityProposal.name + "/forecast");
+              navigate(`${cityProposal.url}-${cityProposal.id}/forecast`);
             }}
             className="city-item"
             key={cityProposal.id}
@@ -42,7 +42,6 @@ function CityProposal({ city, setCity }: CityProposalProps) {
               <li className="city-info">{cityProposal.region}</li>
               <li className="city-info">{cityProposal.country}</li>
             </ul>
-            {/* {cityProposal.name} - {cityProposal.region} - {cityProposal.country}{" "} */}
           </div>
         ))}
     </div>
@@ -50,4 +49,3 @@ function CityProposal({ city, setCity }: CityProposalProps) {
 }
 
 export default CityProposal;
-// onClick={() => navigate(city.name)}

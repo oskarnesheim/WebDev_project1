@@ -45,7 +45,7 @@ export default function CurrentWeather({ city }: cityProps) {
     ICurrentWeatherData,
     Error
   >({
-    queryKey: [city + "current"],
+    queryKey: [city + "_current"],
     queryFn: () => getCurrent(city!),
   });
   if (isLoading) {

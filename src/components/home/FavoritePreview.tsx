@@ -32,7 +32,12 @@ export default function FavoritePreview({ city }: FavoritePreviewProps) {
   return (
     <div
       className="city_preview"
-      onClick={() => navigate(city + "/forecast")}
+      onClick={() =>
+        navigate(
+          city + "/forecast"
+          // ${city.name}_${city.region}_${city.country}/forecast`
+        )
+      }
       key={data.location.name + "/preview"}
     >
       <span className="">

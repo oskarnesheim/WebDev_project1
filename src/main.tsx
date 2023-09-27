@@ -11,32 +11,33 @@ import Forecast from "./components/city/forecast/Forecast.tsx";
 import Home from "./components/home/Home.tsx";
 
 const queryClient = new QueryClient();
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-        children: [
-          {
-            path: ":city",
-            element: <City />,
-            children: [
-              {
-                path: "forecast",
-                element: <Forecast />,
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-],
-{basename: "/project1"}
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+          children: [
+            {
+              path: ":city",
+              element: <City />,
+              children: [
+                {
+                  path: "forecast",
+                  element: <Forecast />,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  { basename: "/project1" }
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

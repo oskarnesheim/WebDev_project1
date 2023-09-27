@@ -3,6 +3,7 @@ import CurrentWeather from "./current/CurrentWeather";
 
 function City() {
   const { city } = useParams();
+  console.log(city);
   return (
     <div>
       <CurrentWeather city={city!} />
