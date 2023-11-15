@@ -18,7 +18,7 @@ export default function FavoritePreview({ city }: FavoritePreviewProps) {
     ICurrentWeatherData,
     Error
   >({
-    queryKey: [city + "current"],
+    queryKey: [city + "_current"],
     queryFn: () => getCurrent(city!),
     staleTime: 1000 * 60 * 60, // decides how long the data is considered fresh
     cacheTime: 1000 * 60 * 60, // decides how long the data is kept in cache
@@ -36,7 +36,7 @@ export default function FavoritePreview({ city }: FavoritePreviewProps) {
       className="city_preview"
       onClick={() =>
         navigate(
-          city + "/forecast",
+          city + "/forecast"
           // ${city.name}_${city.region}_${city.country}/forecast`
         )
       }
