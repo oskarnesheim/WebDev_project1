@@ -15,7 +15,7 @@ describe("City", () => {
             <Forecast />
           </RecoilRoot>
         </BrowserRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     await waitFor(() => {

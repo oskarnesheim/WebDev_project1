@@ -15,7 +15,7 @@ describe("CityInput", () => {
         <RecoilRoot>
           <CityInput currentSearch={CITY} updateSearch={SETCITY} />
         </RecoilRoot>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.findAllByAltText("London")).toBeDefined();
   });
@@ -37,7 +37,7 @@ describe("App snapshot test", () => {
         <RecoilRoot>
           <CityInput currentSearch={CITY} updateSearch={SETCITY} />
         </RecoilRoot>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(result).toMatchSnapshot();
   });

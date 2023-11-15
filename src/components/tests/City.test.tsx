@@ -16,7 +16,7 @@ describe("City", () => {
             <City />
           </RecoilRoot>
         </BrowserRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     await waitFor(() => {

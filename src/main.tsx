@@ -37,7 +37,7 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/project1" }
+  { basename: "/project1" },
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -46,5 +46,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ReactQueryDevtools initialIsOpen={false} />
       <RouterProvider router={router} />
     </RecoilRoot>
-  </QueryClientProvider>
+  </QueryClientProvider>,
 );

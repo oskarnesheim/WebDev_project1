@@ -25,9 +25,9 @@ export const handlers = [
             lon: -81.25,
             url: "london-ontario-canada",
           },
-        ])
+        ]),
       );
-    }
+    },
   ),
 
   rest.get(
@@ -75,9 +75,9 @@ export const handlers = [
             gust_mph: 6.9,
             gust_kph: 11.2,
           },
-        })
+        }),
       );
-    }
+    },
   ),
 
   rest.get(
@@ -1106,8 +1106,8 @@ export const handlers = [
               },
             ],
           },
-        })
+        }),
       );
-    }
+    },
   ),
 ];

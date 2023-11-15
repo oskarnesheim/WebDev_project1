@@ -18,7 +18,7 @@ describe("CityProposal", () => {
             <CityProposal setCity={SETCITY} city={CITY} />
           </RecoilRoot>
         </BrowserRouter>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     await waitFor(() => {
       expect(screen.findAllByAltText("London")).toBeDefined();

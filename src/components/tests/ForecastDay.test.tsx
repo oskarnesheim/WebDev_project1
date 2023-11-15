@@ -12,7 +12,7 @@ describe("ForecastDay", () => {
         <RecoilRoot>
           <ForecastDay day={FORECASTDAY} />
         </RecoilRoot>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(screen.getAllByAltText("Overcast")).toBeDefined();
   });
