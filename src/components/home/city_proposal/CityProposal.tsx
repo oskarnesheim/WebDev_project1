@@ -11,16 +11,16 @@ type CityProposalProps = {
 
 function CityProposal({ city, setCity }: CityProposalProps) {
   const navigate = useNavigate();
-  const { isLoading, isError, data, error } = useQuery<ICity[], Error>({
+  const { isError, data, error } = useQuery<ICity[], Error>({
     queryKey: [city + "_proposal"],
     queryFn: () => getSearch(city),
     staleTime: 1000 * 60 * 60, // decides how long the data is considered fresh
     cacheTime: 1000 * 60 * 60, // decides how long the data is kept in cache
   });
 
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
+  //   if (isLoading) {
+  //     return <div>Loading</div>;
+  //   }
 
   if (isError) {
     return <div>{error.message}</div>;

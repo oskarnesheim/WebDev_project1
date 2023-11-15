@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import FavoritePreview from "./FavoritePreview";
 import { useRecoilState } from "recoil";
@@ -9,7 +9,15 @@ import CityInput from "./city_input/CityInput";
 
 function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
+  const [citySearchDelayed, setCitySearchDelayed] = useState<string>("");
   const [favoriteCitiesList] = useRecoilState(favoriteCities);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCitySearchDelayed(citySearch);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [citySearch]);
 
   return (
     <div className="home-container">
@@ -32,8 +40,8 @@ function Home() {
           )}
         </div>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
-        {citySearch && (
-          <CityProposal setCity={setCitySearch} city={citySearch} />
+        {citySearchDelayed && (
+          <CityProposal setCity={setCitySearch} city={citySearchDelayed} />
         )}
         <Outlet />
       </section>
