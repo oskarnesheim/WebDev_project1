@@ -30,7 +30,7 @@ export default function WeatherChart({ day }: forecastDayProps) {
                 label: "Rain (mm)",
                 backgroundColor: "rgba(0, 0, 255, 0.5)",
                 data: day.hour.map((hour) =>
-                  hour.precip_mm > 0 ? hour.precip_mm : null
+                  hour.precip_mm > 0 ? hour.precip_mm : null,
                 ),
               },
               {

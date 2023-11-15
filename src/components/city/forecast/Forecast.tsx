@@ -13,6 +13,8 @@ function Forecast() {
   >({
     queryKey: [city + "_forecast"],
     queryFn: () => getForecast(city!),
+    staleTime: 1000 * 60 * 60, // decides how long the data is considered fresh
+    cacheTime: 1000 * 60 * 60, // decides how long the data is kept in cache
   });
   if (isLoading) {
     return <div>Loading... ...</div>;

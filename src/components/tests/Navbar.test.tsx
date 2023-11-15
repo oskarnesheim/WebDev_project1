@@ -12,7 +12,7 @@ describe("Navbar", () => {
         <RecoilRoot>
           <Navbar />
         </RecoilRoot>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     //Check if all the links are there
     expect(scr.getByText("WeatherSearcher")).toBeDefined();
@@ -44,7 +44,7 @@ describe("Navbar snapshot test", () => {
         <RecoilRoot>
           <Navbar />
         </RecoilRoot>
-      </BrowserRouter>
+      </BrowserRouter>,
     );
     expect(result).toMatchSnapshot();
   });
