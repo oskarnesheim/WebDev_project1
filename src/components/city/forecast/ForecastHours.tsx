@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { hour } from "../../../../public/interfaces/IWeatherAPI";
 import { measuringUnit } from "../../../recoil/atoms";
 import { useRecoilState } from "recoil";

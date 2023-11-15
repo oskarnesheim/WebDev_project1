@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { forecastday, hour } from "../../../../public/interfaces/IWeatherAPI";
 import ForecastHours from "./ForecastHours";
 import { useState } from "react";

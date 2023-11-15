@@ -14,6 +14,8 @@ function CityProposal({ city, setCity }: CityProposalProps) {
   const { isLoading, isError, data, error } = useQuery<ICity[], Error>({
     queryKey: [city + "_proposal"],
     queryFn: () => getSearch(city),
+    staleTime: 1000 * 60 * 60, // decides how long the data is considered fresh
+    cacheTime: 1000 * 60 * 60, // decides how long the data is kept in cache
   });
 
   if (isLoading) {

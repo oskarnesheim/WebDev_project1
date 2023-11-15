@@ -20,6 +20,8 @@ export default function FavoritePreview({ city }: FavoritePreviewProps) {
   >({
     queryKey: [city + "current"],
     queryFn: () => getCurrent(city!),
+    staleTime: 1000 * 60 * 60, // decides how long the data is considered fresh
+    cacheTime: 1000 * 60 * 60, // decides how long the data is kept in cache
   });
 
   if (isLoading) {
