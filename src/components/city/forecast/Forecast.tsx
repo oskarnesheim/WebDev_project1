@@ -4,6 +4,10 @@ import { IWeatherForeCastData } from "../../../../public/interfaces/IWeatherAPI"
 import { useParams } from "react-router-dom";
 import ForecastDay from "./ForecastDay";
 
+/**
+ * Forecast component
+ * @returns Forecast component
+ */
 function Forecast() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
 

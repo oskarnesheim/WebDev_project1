@@ -8,6 +8,11 @@ type forecastDayProps = {
   day: forecastday;
 };
 
+/**
+ * ForecastDay component
+ * @param day : forecastday
+ * @returns ForecastDay component
+ */
 export default function ForceastDay({ day }: forecastDayProps) {
   const [showHours, setShowHours] = useState<boolean>(false);
   let count = 0;
@@ -16,6 +21,11 @@ export default function ForceastDay({ day }: forecastDayProps) {
     return !showPreview ? "flex" : "none";
   }
 
+  /**
+   * Function that takes in a date and returns the day of the week
+   * @param day : string
+   * @returns  day of the week
+   */
   function getDayOfWeek(day: string) {
     const dayOfWeek = new Date(day).getDay();
     return isNaN(dayOfWeek)

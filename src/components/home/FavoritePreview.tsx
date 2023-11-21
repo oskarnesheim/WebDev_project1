@@ -10,6 +10,11 @@ type FavoritePreviewProps = {
   city: string;
 };
 
+/**
+ * FavoritePreview component that take in a city and renders a preview of the city
+ * @param city : string
+ * @returns FavoritePreview component
+ */
 export default function FavoritePreview({ city }: FavoritePreviewProps) {
   const [metric] = useRecoilState(measuringUnit);
   const navigate = useNavigate();

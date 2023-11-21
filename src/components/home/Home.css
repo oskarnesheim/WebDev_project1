@@ -27,6 +27,7 @@
 }
 
 .sorting_btn {
+  margin-top: 20px;
   padding: 10px 10px;
   border-radius: 4px;
   background-color: transparent;
@@ -99,7 +100,7 @@
 
   .favorites_preview {
     padding: 0 5px;
-    margin-top: 90px;
+    margin-top: 10px;
   }
 
   .city_preview {

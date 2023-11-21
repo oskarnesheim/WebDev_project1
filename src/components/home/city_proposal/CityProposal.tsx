@@ -9,6 +9,12 @@ type CityProposalProps = {
   setCity: React.Dispatch<React.SetStateAction<string>>;
 };
 
+/**
+ * CityProposal component that renders the proposals for the cityinput
+ * @param city : string
+ * @param setCity : React.Dispatch<React.SetStateAction<string>>
+ * @returns CityProposal component
+ */
 function CityProposal({ city, setCity }: CityProposalProps) {
   const navigate = useNavigate();
   const { isError, data, error } = useQuery<ICity[], Error>({

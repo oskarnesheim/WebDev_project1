@@ -14,6 +14,11 @@ type cityProps = {
   city: string;
 };
 
+/**
+ *  CurrentWeather component
+ * @param city : string
+ * @returns  CurrentWeather component
+ */
 export default function CurrentWeather({ city }: cityProps) {
   const [showAdvanced, setShowAdvanced] = useRecoilState(globalAdvancedState);
   const [metric] = useRecoilState(measuringUnit);
@@ -29,6 +34,9 @@ export default function CurrentWeather({ city }: cityProps) {
     [favoriteCitiesList]
   );
 
+  /**
+   * useEffect to set the star symbol
+   */
   useEffect(() => {
     setStarSymbol(getCityStatus(city!));
   }, [getCityStatus, city]);
@@ -64,15 +72,6 @@ export default function CurrentWeather({ city }: cityProps) {
     return <div>We found this error... {error.message}</div>;
   }
 
-  function toggleAdvanced() {
-    setShowAdvanced(!showAdvanced);
-    if (showAdvanced) {
-      localStorage.setItem("showAdvanced", JSON.stringify(false));
-    } else {
-      localStorage.setItem("showAdvanced", JSON.stringify(true));
-    }
-  }
-
   return (
     <div className="current-weather-container">
       <div>
@@ -93,7 +92,10 @@ export default function CurrentWeather({ city }: cityProps) {
             alt=""
           />
         </div>
-        <button className="advanced-btn" onClick={() => toggleAdvanced()}>
+        <button
+          className="advanced-btn"
+          onClick={() => setShowAdvanced(!showAdvanced)}
+        >
           {showAdvanced ? "Hide Andvanced" : "Show Andvanced"}
         </button>
       </div>

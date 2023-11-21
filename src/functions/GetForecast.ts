@@ -1,6 +1,11 @@
 import axios from "axios";
 import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
 
+/**
+ *  Get data from API
+ * @param API_request 
+ * @returns 
+ */
 async function getData(API_request: string): Promise<IWeatherForeCastData> {
   return await axios
     .get(API_request)
@@ -8,6 +13,11 @@ async function getData(API_request: string): Promise<IWeatherForeCastData> {
     .catch((err) => console.log(err));
 }
 
+/**
+ * Get forecast weather data
+ * @param city 
+ * @returns 
+ */
 function getForecast(city: string) {
   const numberOfDays = 10;
   const airQuality = true;

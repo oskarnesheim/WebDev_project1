@@ -4,6 +4,10 @@ import Navbar_Item from "./Navbar_Item";
 import "./Navbar.css";
 import MetricChooser from "./MetricChooser";
 
+/**
+ * Navbar component that renders the navbar
+ * @returns Navbar component
+ */
 function Navbar() {
   const navigate = useNavigate();
   return (

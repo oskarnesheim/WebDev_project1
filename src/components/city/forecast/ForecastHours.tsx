@@ -9,6 +9,13 @@ type forecastHourProps = {
   count: number;
 };
 
+/**
+ * ForecastHours component
+ * @param hour : hour
+ * @param preview : boolean
+ * @param count : number
+ * @returns ForecastHours component
+ */
 export default function ForecastHours({
   hour,
   preview,

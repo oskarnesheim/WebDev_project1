@@ -89,51 +89,51 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 ### Code base
 
 **Feedback:** Define returntypes for functions
-**Solution:** TODO
+**Solution:** TODO <br>
 
 **Feedback:** Comment code better
-**Solution:** TODO
+**Solution:** TODO <br>
 
 **Feedback:** File structure is good, but in a small project like this i would prefer to have all the components in the same folder.
-**Solution:** TODO
+**Solution:** TODO <br>
 
 ### Functionality
 
-**Feedback:** Maybe you could have used filtering or sorting more clearly, for example that the user can decide for himself whether he wants to sort the favorite cities in alphabetical order, temperature, etc.
+**Feedback:** Maybe you could have used filtering or sorting more clearly, for example that the user can decide for himself whether he wants to sort the favorite cities in alphabetical order, temperature, etc. <br>
 **Solution:** TODO
 
-**Feedback:** In the evaluation of the web application's functional requirements, it is clear that its primary purpose, namely to "see the weather," is performed efficiently. However, there is a lack of essential functions when it comes to sorting and filtering. These functions, such as being able to sort cities based on current weather conditions or filter by specific criteria, could have improved the application's utility value.
+**Feedback:** In the evaluation of the web application's functional requirements, it is clear that its primary purpose, namely to "see the weather," is performed efficiently. However, there is a lack of essential functions when it comes to sorting and filtering. These functions, such as being able to sort cities based on current weather conditions or filter by specific criteria, could have improved the application's utility value. <br>
 **Solution:** TODO
 
-**Feedback:** Functionally a very good application, and the only thing that may be missing here is "paging back and forth", but again this is probably more a question of definition.
+**Feedback:** Functionally a very good application, and the only thing that may be missing here is "paging back and forth", but again this is probably more a question of definition. <br>
 **Solution:** TODO
 
-**Feedback:** With paging I mean e.g. arrows to the next / previous resource. I see how it can be difficult when the resources are weather data for cities, so I think this group has met the requirement for paging as well as possible based on the chosen API.
+**Feedback:** With paging I mean e.g. arrows to the next / previous resource. I see how it can be difficult when the resources are weather data for cities, so I think this group has met the requirement for paging as well as possible based on the chosen API. <br>
 **Solution:** TODO
 
-**Feedback:** Maybe try to find a way to incorporate paging with arrows in the application? For example, a solution could have been to scroll between the days in a given city.
-**Solution:** TODO
-
-**Feedback:** I also want you to put in a symbol to show hour by hour. This helps users understand that it is an option.
+**Feedback:** Maybe try to find a way to incorporate paging with arrows in the application? For example, a solution could have been to scroll between the days in a given city. <br>
 **Solution:** TODO
 
 ### Design
 
-**Feedback:** When it comes to evaluating the design of the web application, it is worth noting that the design is what I personally like best about the app. It gives a very tidy impression, and the color combination harmonizes well with the application's theme and functionality. In addition, the mobile view is implemented in an impressive way. It is especially positive that the group has created different components for each view, which provides a well-organized and structured user experience. This shows attention to detail and user-friendliness, which enhances the app's appeal.
+**Feedback:** When it comes to evaluating the design of the web application, it is worth noting that the design is what I personally like best about the app. It gives a very tidy impression, and the color combination harmonizes well with the application's theme and functionality. In addition, the mobile view is implemented in an impressive way. It is especially positive that the group has created different components for each view, which provides a well-organized and structured user experience. This shows attention to detail and user-friendliness, which enhances the app's appeal. <br>
 **Solution:** Keep most of the design as it is, except for minor changes.
 
-**Feedback:** The application is responsive, but text and icons in the ForcastDay_preview "boxes" do not change size with the box itself, and disappear from the box when the screen width is reduced. This happens until you reach a width of 500px, where the content is eventually adapted.
+**Feedback:** The application is responsive, but text and icons in the ForcastDay_preview "boxes" do not change size with the box itself, and disappear from the box when the screen width is reduced. This happens until you reach a width of 500px, where the content is eventually adapted. <br>
 **Solution:** We prioritized a range of devices for testing, and the application and the design works well on all of them. We have not tested on devices with a width of less than 500px, but this is something we could do in the future.
 
-**Feedback:** The favorite section is messy, and could use some better styling. In addition, the timeline for the weather forecast is somewhat confusing, and could be made more readable, but works fine.
+**Feedback:** The favorite section is messy, and could use some better styling. In addition, the timeline for the weather forecast is somewhat confusing, and could be made more readable, but works fine. <br>
 **Solution:** Added styling to favorites section. TODO: Make timeline more readable.
+
+**Feedback:** I also want you to put in a symbol to show hour by hour. This helps users understand that it is an option. <br>
+**Solution:** Added a Button (Show hours/Hide hours) to make it more clear that you can see the weather hour by hour
 
 ### Documentation
 
-**Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments.
+**Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments. <br>
 **Solution:** TODO @oskar
 
-**Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application.
+**Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application.  <br>
 **Solution:** Updated readme with browsers tested in.
 
 ### For the future
