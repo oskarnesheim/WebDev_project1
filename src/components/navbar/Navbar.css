@@ -1,9 +1,9 @@
 /* Navbar.css */
 
 /* Style for the sidebar container */
-.sidebar {
+.navbar {
   background-color: rgb(60, 153, 235);
-  padding: 1rem;
+  padding: 0 1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
 }
 
 /* Style for the app name */
-.sidebar h1 {
+navbar h1 {
   font-size: 2rem;
   text-decoration: none;
   color: #ffffff;
@@ -63,14 +63,14 @@
 }
 
 /* Style for hover effect (common for both app name and navigation links) */
-.sidebar h1:hover,
+navbar h1:hover,
 .NavLinks a:hover {
   color: #9bdfff;
 }
 
 /* Media query for screens with a maximum width of 390px (mobile phones) */
 @media (max-width: 390px) {
-  .sidebar h1 {
+  navbar h1 {
     font-size: 1.5rem;
     justify-content: center;
   }

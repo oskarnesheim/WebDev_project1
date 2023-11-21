@@ -36,7 +36,7 @@ export default function FavoritePreview({ city }: FavoritePreviewProps) {
       className="city_preview"
       onClick={() =>
         navigate(
-          city + "/forecast"
+          city + "/forecast",
           // ${city.name}_${city.region}_${city.country}/forecast`
         )
       }
