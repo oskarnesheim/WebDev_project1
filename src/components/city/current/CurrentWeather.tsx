@@ -31,7 +31,7 @@ export default function CurrentWeather({ city }: cityProps) {
     (cityName: string) => {
       return favoriteCitiesList.includes(cityName) ? "☆" : "★";
     },
-    [favoriteCitiesList]
+    [favoriteCitiesList],
   );
 
   /**

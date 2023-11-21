@@ -3,8 +3,8 @@ import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
 
 /**
  *  Get data from API
- * @param API_request 
- * @returns 
+ * @param API_request
+ * @returns
  */
 async function getData(API_request: string): Promise<ICurrentWeatherData> {
   return await axios
@@ -15,8 +15,8 @@ async function getData(API_request: string): Promise<ICurrentWeatherData> {
 
 /**
  * Get current weather data
- * @param city 
- * @returns 
+ * @param city
+ * @returns
  */
 function getCurrent(city: string) {
   const WEATHER_REQUEST =

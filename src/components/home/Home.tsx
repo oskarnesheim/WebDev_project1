@@ -34,7 +34,6 @@ function Home() {
     return [...favoriteCitiesList].sort((a, b) => a.localeCompare(b));
   }, [favoriteCitiesList]);
 
-
   /**
    * useEffect that sets the sortedFavoriteCitiesList when the favoriteCitiesList changes
    */

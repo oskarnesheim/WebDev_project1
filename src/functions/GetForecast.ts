@@ -3,8 +3,8 @@ import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
 
 /**
  *  Get data from API
- * @param API_request 
- * @returns 
+ * @param API_request
+ * @returns
  */
 async function getData(API_request: string): Promise<IWeatherForeCastData> {
   return await axios
@@ -15,8 +15,8 @@ async function getData(API_request: string): Promise<IWeatherForeCastData> {
 
 /**
  * Get forecast weather data
- * @param city 
- * @returns 
+ * @param city
+ * @returns
  */
 function getForecast(city: string) {
   const numberOfDays = 10;

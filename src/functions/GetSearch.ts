@@ -3,8 +3,8 @@ import ICity from "../../public/interfaces/CitySearch";
 
 /**
  *  Get data from API
- * @param API_request 
- * @returns 
+ * @param API_request
+ * @returns
  */
 async function getData(API_request: string): Promise<ICity[]> {
   return await axios
@@ -15,8 +15,8 @@ async function getData(API_request: string): Promise<ICity[]> {
 
 /**
  * Get search data
- * @param city 
- * @returns 
+ * @param city
+ * @returns
  */
 function getSearch(city: string) {
   const WEATHER_REQUEST =

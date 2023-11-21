@@ -133,13 +133,7 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 **Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments. <br>
 **Solution:** TODO @oskar
 
-**Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application.  <br>
+**Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application. <br>
 **Solution:** Updated readme with browsers tested in.
 
 ### For the future
-
-
-
-
-
-

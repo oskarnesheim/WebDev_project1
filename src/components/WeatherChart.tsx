@@ -11,7 +11,7 @@ type forecastDayProps = {
  * NB! This component is not used in the application because of library restrictions
  * Function that takes in a date and returns the day of the week
  * @param day
- * @returns 
+ * @returns
  */
 export default function WeatherChart({ day }: forecastDayProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
