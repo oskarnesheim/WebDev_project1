@@ -2,7 +2,8 @@
 
 The **WeatherSearcher** app is a simple yet powerful tool that allows you to access accurate weather forecasts for your desired locations.
 
-In this app, you can add up to 5 cities to your list of favorites, making it easy to keep tabs on the weather in multiple locations. Your favorite cities will be saved for your convenience the next time you visit the page. Additionally, WeatherSearcher provides a settings option that allows you to choose between the metric system (default) and the imperial system, ensuring that you get weather information in the units you prefer. We initially wanted to show the forecast for the upcoming 10 days, but the API we're currently using doesn't offer forecasts for more than 3 days in the future unless we pay for it.
+In this app, you can add up to 6 cities to your list of favorites, making it easy to keep tabs on the weather in multiple locations. Your favorite cities will be saved for your convenience the next time you visit the page. Additionally, WeatherSearcher provides a settings option that allows you to choose between the metric system (default) and the imperial system, ensuring that you get weather information in the units you prefer. <br>
+We initially wanted to show the forecast for the upcoming 10 days, but the API we're currently using doesn't offer forecasts for more than 3 days in the future unless we pay for it.
 
 ## Running the App
 
@@ -59,60 +60,123 @@ To run the tests and verify the app's functionality and responsiveness, follow t
 
 With our robust testing approach, we aim to deliver a reliable and user-friendly weather forecasting experience through WeatherSearcher.
 
+## Prettier
+
+- To apply prettier to the code, open your terminal and run the following command:
+
+  ```
+  npm run prettier-write
+  ```
+
+- To check if prettier is applied, open your terminal and run the following command:
+
+  ```
+  npm run prettier-check
+  ```
+
 # Requirements
 
 ## Functional Requirements
 
-- _The user should be presented with one reseoource at a time, but should have the option to navigate back and forth, and to jump to a specific resource (e.g. by choosing from a list)._<br>
-  **The user is presented with it's favorites and can go back and forth between them. In addition a user can search for a favorite city.**
-- _A user should be able to make a choice (e.g. filtering or sorting) that affects the selection of what is presented and how it is presented. These choices should be remembered even if the page is reloaded._<br>
-  **We have implemented both localstorage and sessionstorage saving. Favorites will be saved with localstorage until next time you visit the webpage, while metric/imperial will only be saved during the session. At first we implemented saving of metric/imperial as a localstorage, but to meet the requirements we changed it to sessionstorage.**
+```diff
+The user should be presented with one rescource at a time, but should have the option to navigate back and forth, and to jump to a specific resource (e.g. by choosing from a list).
++ Done
+```
 
-- _A user should be able to choose favorites by for example clicking on a star or a heart. Choices should be remembered even if the browser is closed and restarted._<br>
-  **A user can choose favorites by clicking on the star after the cityname. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.**
-- _The page should be responsive and work well on both desktop and mobile devices._<br>
-  **The page is responsive and works well on both desktop and mobile devices. NB: We have only tested on the devices listed under testing**
-- _The page should have an aesthetic and tidy design (this is subjective, but we are looking for you to have put some work into styling the page)._ <br>
-  **We have put a lot of work into styling the page. We have used a lot of time to make the page look good and we are very happy with the result.**
+**Comment:**
+
+- Navigating back and fourth: The user is presented with it's favorites and can go back and forth between them by clicking on them in the favorites section.
+  - The feedback we got on [Functionality](#functionality) suggested that we should add arrows to navigate between favorites, but we have chosen to keep it simple for now since we have a limited amount of favorites and did not see it as necessary.
+- Jump to a specific resource: The user can search for a city and jump to that city by clicking on it in the search results.
+
+```diff
+A user should be able to make a choice (e.g. filtering or sorting) that affects the selection of what is presented and how it is presented. These choices should be remembered even if the page is reloaded.
++ Done
+```
+
+**Comment:**
+
+- Sort: The user can sort favorites in alphabetical order or by time added by clicking on the togglebutton in the favorites section. The favorites will be sorted in time added order by default. This sorting is stored in sessionstorage and will be remembered even if the page is reloaded.
+- Search (filter): The user can search for a city by typing in the searchbar. The search results will consist of cities that match the search query, and therefore it works as a filter. The search results will be saved in cache and will be available if the user refresh, or searches for the same city again.
+- Favourite display: are presented on top of the searchbar, with the possibility to remove them by clicking on the star. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.
+- Metric/imperial: The user can choose between metric and imperial by clicking on the togglebutton in the settings section. The choice will be saved in sessionstorage and will be remembered even if the page is reloaded.
+
+```diff
+A user should be able to choose favorites by for example clicking on a star or a heart. Choices should be remembered even if the browser is closed and restarted.
++ Done
+```
+
+**Commen:** A user can choose favorites by clicking on the star after the cityname. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.
+
+```diff
+The page should be responsive and work well on both desktop and mobile devices.
++ Done
+```
+
+**Comment:** The page is responsive and works well on both desktop and mobile devices. NB: We have only tested on the devices listed under [Testing](#testing).
+
+```diff
+The page should have an aesthetic and tidy design (this is subjective, but we are looking for you to have put some work into styling the page).
++ Done
+```
+
+**Comment:** We have put a lot of work into styling the page and we are very happy with the result. The feedback we got on [Design](#design) was very positive, and we have only made minor changes where it was requested.
 
 ## Technichal Requirements
 
-- _The solution is based on Typescript and React._ **Done**<br>
-- _The solution uses React state and props._ **Done**<br>
-- _The solution fetches data from a REST API and uses TanStack Query._ **Done**<br>
-- _The solution uses HTML Web storage API (both localstorage and sessionstorage), alternatively you can also use the IndexedDB API._ **Done**<br>
-- _The solution uses React Router._ **Done**<br>
-- _The solution has responsive design._ **Done**<br>
+```diff
+The solution is based on Typescript and React.
++ Done
+```
 
-# Feedback:
+```diff
+The solution uses React state and props.
++ Done
+```
+
+```diff
+The solution fetches data from a REST API and uses TanStack Query.
++ Done
+```
+
+```diff
+The solution uses HTML Web storage API (both localstorage and sessionstorage), alternatively you can also use the IndexedDB API.
++ Done
+```
+
+```diff
+The solution uses React Router.
++ Done
+```
+
+```diff
+The solution has responsive design.
++ Done
+```
+
+# Feedback :
 
 ### Code base
 
-**Feedback:** Define returntypes for functions
-**Solution:** TODO <br>
+**Feedback:** Define returntypes for functions<br>
+**Solution:** We have not been consistent adding having returntypes for functions, but we have defined types for variables and props - so we have not prioritized this.
 
-**Feedback:** Comment code better
-**Solution:** TODO <br>
+**Feedback:** Comment code better<br>
+**Solution:** Added TSdoc comments to the most important functions.
 
-**Feedback:** File structure is good, but in a small project like this i would prefer to have all the components in the same folder.
-**Solution:** TODO <br>
+**Feedback:** File structure is good, but in a small project like this i would prefer to have all the components in the same folder.<br>
+**Solution:** Since we have a lot of components, we have chosen to keep them in different folders. The reason behind this is to make it easier to navigate if we are going to expand the project.
 
 ### Functionality
 
 **Feedback:** Maybe you could have used filtering or sorting more clearly, for example that the user can decide for himself whether he wants to sort the favorite cities in alphabetical order, temperature, etc. <br>
-**Solution:** TODO
-
-**Feedback:** In the evaluation of the web application's functional requirements, it is clear that its primary purpose, namely to "see the weather," is performed efficiently. However, there is a lack of essential functions when it comes to sorting and filtering. These functions, such as being able to sort cities based on current weather conditions or filter by specific criteria, could have improved the application's utility value. <br>
-**Solution:** TODO
+**Solution:** We have added a togglebutton for sorting favorites in alphabetical order and by time added. We could have added more sorting options, but we have chosen to keep it simple for now.
 
 **Feedback:** Functionally a very good application, and the only thing that may be missing here is "paging back and forth", but again this is probably more a question of definition. <br>
-**Solution:** TODO
-
-**Feedback:** With paging I mean e.g. arrows to the next / previous resource. I see how it can be difficult when the resources are weather data for cities, so I think this group has met the requirement for paging as well as possible based on the chosen API. <br>
-**Solution:** TODO
+**Solution:** We have implemented paging back and forth between favorites by clicking on them in the favorites section. We have did not se the need for arrows to navigate between favorites, since we have a limited amount of favorites.
 
 **Feedback:** Maybe try to find a way to incorporate paging with arrows in the application? For example, a solution could have been to scroll between the days in a given city. <br>
-**Solution:** TODO
+**Solution:** Since the API we are using only provides 3 days of forecast, we have chosen to show all 3 days at once (paging is not necessary with so few days ). But we will definitely consider this if we are going to expand the project.
 
 ### Design
 
@@ -120,10 +184,10 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 **Solution:** Keep most of the design as it is, except for minor changes.
 
 **Feedback:** The application is responsive, but text and icons in the ForcastDay_preview "boxes" do not change size with the box itself, and disappear from the box when the screen width is reduced. This happens until you reach a width of 500px, where the content is eventually adapted. <br>
-**Solution:** We prioritized a range of devices for testing, and the application and the design works well on all of them. We have not tested on devices with a width of less than 500px, but this is something we could do in the future.
+**Solution:** We prioritized a range of devices for testing, and the application and the design works well on all of them. We have not tested on devices with a width of 500px, but this is clearly something we would prioritize if we were to expand the project.
 
 **Feedback:** The favorite section is messy, and could use some better styling. In addition, the timeline for the weather forecast is somewhat confusing, and could be made more readable, but works fine. <br>
-**Solution:** Added styling to favorites section. TODO: Make timeline more readable.
+**Solution:** Added styling to favorites section. Since the timeline worked fine, we did not prioritize changing it in this version.
 
 **Feedback:** I also want you to put in a symbol to show hour by hour. This helps users understand that it is an option. <br>
 **Solution:** Added a Button (Show hours/Hide hours) to make it more clear that you can see the weather hour by hour
@@ -131,9 +195,21 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 ### Documentation
 
 **Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments. <br>
-**Solution:** TODO @oskar
+**Solution:** TODO @oskar . We have added comments to the codebase, and we have added more information to the readme.
 
 **Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application. <br>
 **Solution:** Updated readme with browsers tested in.
 
-### For the future
+### Bugs / Errors
+
+**Feedback:** BUG: I tried to search for my hometown (Stange), but when I clicked on the object I was sent to the page for Stanger (South Africa). Also happens with Sande (gives you Sandefjord), so it may be something with the query
+**Solution** We have not prioritized to change the query since the places referred to are displayed in the search results, and the user can choose the correct place from the list.
+
+**Feedback:** Had to use "npm install --force" to be able to install necessary things. There was a dependency message when I ran the regular "npm install" that complained about some imports that were not compatible with each other. <br>
+**Solution:** When we started up we went for "performance npm", so the user have to write "pnpm install" to install the necessary things. We have added a message in the readme to make it more clear.
+
+**Feedback:** Problems with eslint. <br>
+**Solution:** We have gone through the code and deleted all the eslint errors, including eslint-disable comments.
+
+**Feddback:** Prettier is not added to the project. <br>
+**Solution:** We have added prettier to the project. It can be applied by writing "npm run prettier-write", and it can be checked by writing "npm run prettier-check". We updated this in the readme as well.
