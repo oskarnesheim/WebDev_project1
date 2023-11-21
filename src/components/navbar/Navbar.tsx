@@ -7,7 +7,7 @@ import MetricChooser from "./MetricChooser";
 function Navbar() {
   const navigate = useNavigate();
   return (
-    <div className="sidebar ">
+    <div className="navbar">
       <h1 onClick={() => navigate("/")} className="">
         WeatherSearcher
       </h1>

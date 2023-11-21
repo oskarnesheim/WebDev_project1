@@ -16,25 +16,8 @@ a {
   color: #333;
 }
 
-.contents_body {
-  margin-top: 120px;
-}
 
 #root {
   width: 100%;
   height: 100%;
-}
-
-/* Media query for screens with a maximum width of 390px (mobile phones) */
-@media (max-width: 390px) {
-  /* Adjust styles for mobile devices here */
-
-  body {
-    /* You can make further adjustments to font size, line height, etc. for better mobile readability */
-  }
-
-  .contents_body {
-    margin-top: 80px;
-    /* Reduce top margin for small screens */
-  }
 }

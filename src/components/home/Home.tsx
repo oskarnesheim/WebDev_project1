@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
 import FavoritePreview from "./FavoritePreview";
 import { useRecoilState } from "recoil";
 import "./Home.css";
 import { favoriteCities } from "../../recoil/atoms";
 import CityProposal from "./city_proposal/CityProposal";
 import CityInput from "./city_input/CityInput";
+import { Outlet } from "react-router-dom";
 
 function Home() {
   const [citySearch, setCitySearch] = useState<string>("");
@@ -22,6 +22,7 @@ function Home() {
   return (
     <div className="home-container">
       <section className="home-section">
+        <h2>Favorites</h2>
         <div className="favorites_preview">
           {favoriteCitiesList.length !== 0 ? (
             favoriteCitiesList.map((city) => {
@@ -39,6 +40,9 @@ function Home() {
             </div>
           )}
         </div>
+        <h3>
+          You can also search for a city by typing it in the search bar below
+        </h3>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
         {citySearchDelayed && (
           <CityProposal setCity={setCitySearch} city={citySearchDelayed} />
