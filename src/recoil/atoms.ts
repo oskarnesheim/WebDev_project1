@@ -39,3 +39,16 @@ function getAdvanced() {
   }
   return showAdvanced;
 }
+
+export const globalSortingState = atom({
+  key: "globalSortingState", // unique ID (with respect to other atoms/selectors)
+  default: getSorting() as boolean, // default value (aka initial value)
+});
+
+function getSorting() {
+  let currSorting: boolean = false;
+  if (sessionStorage.getItem("sorting")) {
+    currSorting = JSON.parse(sessionStorage.getItem("sorting")!);
+  }
+  return currSorting;
+}

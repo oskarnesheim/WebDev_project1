@@ -70,6 +70,12 @@ export default function ForceastDay({ day }: forecastDayProps) {
           })}
         </div>
       )}
+      <button
+        className="show_hours_btn"
+        onClick={() => setShowHours(!showHours)}
+      >
+        {showHours ? "Hide hours ⬆" : "Show hours ⬇"}
+      </button>
     </div>
   );
 }

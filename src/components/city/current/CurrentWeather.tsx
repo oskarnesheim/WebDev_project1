@@ -40,7 +40,7 @@ export default function CurrentWeather({ city }: cityProps) {
     } else {
       favorites.splice(favorites.indexOf(city!), 1);
     }
-    while (favorites.length > 5) {
+    while (favorites.length > 6) {
       favorites.shift();
     }
     localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -102,7 +102,7 @@ export default function CurrentWeather({ city }: cityProps) {
           <div className="weather-info-item">
             Wind (direction):&nbsp;
             {metric
-              ? (data.current.wind_kph / 3.6).toPrecision(2) + " Kph"
+              ? (data.current.wind_kph * 0.2778).toPrecision(2) + " m/s"
               : (data.current.wind_mph / 3.6).toPrecision(2) + " Mph"}
             &nbsp;({data.current.wind_dir})
           </div>

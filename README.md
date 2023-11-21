@@ -39,6 +39,10 @@ In addition to standard testing, we've also paid special attention to responsive
 - iPhone 12 Pro
 - iPhone 13
 
+Browser tested in:
+
+- Google Chrome
+
 ## Running the Tests
 
 To run the tests and verify the app's functionality and responsiveness, follow these steps:
@@ -82,7 +86,7 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 
 # Feedback:
 
-## Code base
+### Code base
 
 **Feedback:** Define returntypes for functions
 **Solution:** TODO
@@ -93,7 +97,7 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 **Feedback:** File structure is good, but in a small project like this i would prefer to have all the components in the same folder.
 **Solution:** TODO
 
-## Functionality
+### Functionality
 
 **Feedback:** Maybe you could have used filtering or sorting more clearly, for example that the user can decide for himself whether he wants to sort the favorite cities in alphabetical order, temperature, etc.
 **Solution:** TODO
@@ -113,25 +117,26 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
 **Feedback:** I also want you to put in a symbol to show hour by hour. This helps users understand that it is an option.
 **Solution:** TODO
 
-## Design
+### Design
 
 **Feedback:** When it comes to evaluating the design of the web application, it is worth noting that the design is what I personally like best about the app. It gives a very tidy impression, and the color combination harmonizes well with the application's theme and functionality. In addition, the mobile view is implemented in an impressive way. It is especially positive that the group has created different components for each view, which provides a well-organized and structured user experience. This shows attention to detail and user-friendliness, which enhances the app's appeal.
-**Solution:** TODO
+**Solution:** Keep most of the design as it is, except for minor changes.
 
 **Feedback:** The application is responsive, but text and icons in the ForcastDay_preview "boxes" do not change size with the box itself, and disappear from the box when the screen width is reduced. This happens until you reach a width of 500px, where the content is eventually adapted.
-**Solution:** TODO
+**Solution:** We prioritized a range of devices for testing, and the application and the design works well on all of them. We have not tested on devices with a width of less than 500px, but this is something we could do in the future.
 
 **Feedback:** The favorite section is messy, and could use some better styling. In addition, the timeline for the weather forecast is somewhat confusing, and could be made more readable, but works fine.
-**Solution:** TODO
+**Solution:** Added styling to favorites section. TODO: Make timeline more readable.
 
-## Documentation
+### Documentation
 
 **Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments.
-**Solution:** TODO
+**Solution:** TODO @oskar
 
 **Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application.
-**Solution:** TODO
+**Solution:** Updated readme with browsers tested in.
 
+### For the future
 
 
 

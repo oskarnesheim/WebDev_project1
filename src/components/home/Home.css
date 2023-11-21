@@ -26,12 +26,49 @@
   color: #50c8ff;
 }
 
+.sorting_btn {
+  padding: 10px 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  background-color: rgb(60, 153, 235);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.sorting_btn:hover {
+  background-color: #9bdfff;
+}
+
+.sorting_btn:active {
+  background-color: rgb(60, 153, 235);
+}
+
 /* Style for the favorites preview section */
 .favorites_preview {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 0 10px;
+}
+
+.favorites_preview_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .favorites_preview_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .favorites_preview_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Style for individual city previews */

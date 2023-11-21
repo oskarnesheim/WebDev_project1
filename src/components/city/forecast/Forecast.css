@@ -31,6 +31,19 @@
   margin-left: 20px;
 }
 
+/* Style for the button to show the hours */
+.show_hours_btn {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.show_hours_btn:hover {
+  color: #777;
+}
+
 /* Style for the temperature */
 .temperature {
   font-weight: bold;
