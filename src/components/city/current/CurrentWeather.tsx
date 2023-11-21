@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { ICurrentWeatherData } from "../../../../public/interfaces/IWeatherAPI";
 import getCurrent from "../../../functions/GetCurrent";
@@ -20,11 +20,18 @@ export default function CurrentWeather({ city }: cityProps) {
 
   const [favoriteCitiesList, setFavoriteCitiesList] =
     useRecoilState(favoriteCities);
-  const [starSymbol, setStarSymbol] = useState(getCityStatus(city!));
+  const [starSymbol, setStarSymbol] = useState("☆");
 
-  function getCityStatus(cityName: string) {
-    return !favoriteCitiesList.includes(cityName) ? "★" : "☆";
-  }
+  const getCityStatus = useCallback(
+    (cityName: string) => {
+      return favoriteCitiesList.includes(cityName) ? "☆" : "★";
+    },
+    [favoriteCitiesList]
+  );
+
+  useEffect(() => {
+    setStarSymbol(getCityStatus(city!));
+  }, [getCityStatus, city]);
 
   function toggleFavorite() {
     const favorites: string[] = [...favoriteCitiesList];
