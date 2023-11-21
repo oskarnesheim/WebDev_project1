@@ -1,8 +1,8 @@
 import getForecast from "../../../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
 import { IWeatherForeCastData } from "../../../../public/interfaces/IWeatherAPI";
-import { useParams } from "react-router-dom";
 import ForecastDay from "./ForecastDay";
+import { useParams } from "react-router-dom";
 
 /**
  * Forecast component
@@ -10,7 +10,6 @@ import ForecastDay from "./ForecastDay";
  */
 function Forecast() {
   const { city } = useParams(); //? city må være lik ':city' i pathen for å kunne brukes her
-
   const { isLoading, isError, data, error } = useQuery<
     IWeatherForeCastData,
     Error

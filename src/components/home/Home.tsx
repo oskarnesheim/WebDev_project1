@@ -76,6 +76,7 @@ function Home() {
   return (
     <div className="home-container">
       <section className="home-section">
+        <h2>Favorites</h2>
         <button
           className="sorting_btn"
           onClick={() => saveSorting(!sorting)}
@@ -98,6 +99,9 @@ function Home() {
             </div>
           )}
         </div>
+        <h3>
+          You can also search for a city by typing it in the search bar below
+        </h3>
         <CityInput currentSearch={citySearch} updateSearch={setCitySearch} />
         {citySearchDelayed && (
           <CityProposal setCity={setCitySearch} city={citySearchDelayed} />
