@@ -96,14 +96,16 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
   
 # API
 
-We are using the [WeatherAPI](https://www.weatherapi.com/api-explorer.aspx#forecast) to get the weather data. The API is free to use, but we are limited to 3 days of forecast for any given location. We are using the following endpoints:
+We are using the [WeatherAPI](https://www.weatherapi.com/api-explorer.aspx#forecast) to get our weather data. The API is free to use, but we are limited to 3 days of forecast for any given location. This API provies us with alot of data about the weather from all around the world. It has a search function that allows us to search for a city, and it will return a list of cities that match the search query. From the result of this you can select what city you want to get the forecast for. The API also provides us with the current weather and the forecast for a given location. This made it easy to get a functional application up and running in a short amount of time, and was one of the reasons we chose this API.
+
+We are using the following endpoints:
 
 - http://api.weatherapi.com/v1/current.json?key=1413dd12c034448e8e894125230109&q=" + city + "&aqi=no";
-  - Here we get the current weather for a given location.
+  - This endpoint provides us with the current weather for a given city.
 - "http://api.weatherapi.com/v1/forecast.json?key=1413dd12c034448e8e894125230109&q=" + city + "&days=" + numberOfDays + "&aqi=" + airQuality + "&alerts=" + allerts;
-  - Here we get the forecast for a given location. We are using 3 days as default, and we are not using airQuality or alerts.
+  - Here we get the forecast for a given city. We are using 3 days as default, and we have includes neither airQuality nor alerts.
 - "http://api.weatherapi.com/v1/search.json?key=1413dd12c034448e8e894125230109&q=" + "city";
-  - Here you do a fuzzy search for a given location. We are using this to get the search results. From the result of this you can select what city you want to get the forecast for.
+  - The search endpoint allows the user to do a fuzzy search for a given city. It returns a list of cities that match the search query. We use this to allow the user to choose between cities with the same name.
 
 
 # Requirements
@@ -250,7 +252,7 @@ In the src folder you will find the following folders:
 ### Documentation
 
 **Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments. <br>
-**Solution:** We have added information about the API, folderstructure and testting.
+**Solution:** We have added information about the API, folderstructure and testing.
 
 **Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application. <br>
 **Solution:** Updated readme with browsers tested in.

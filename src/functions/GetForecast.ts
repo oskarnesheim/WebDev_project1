@@ -7,7 +7,7 @@ import { BASE_URL_FORECAST } from "../components/assets/APIUrl";
  * @returns
  */
 export async function getForecast(city: string) {
-  const NUMBER_OF_DAYS = 10;
+  const NUMBER_OF_DAYS = 3;
   const AIR_QUALITY = "no";
   const ALLERTS = "no";
   const WEATHER_REQUEST =

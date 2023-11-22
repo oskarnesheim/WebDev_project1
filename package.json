@@ -10,7 +10,10 @@
     "preview": "vite preview",
     "test": "vitest --coverage",
     "prettier-check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "prettier-write": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "prettier-write": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "precheck": "pnpm run build",
+    "check": "pnpm run lint && pnpm run test",
+    "postcheck": "pnpm run prettier-write && pnpm run prettier-check"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.33.0",
