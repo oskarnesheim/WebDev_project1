@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { ICurrentWeatherData } from "../../../public/interfaces/IWeatherAPI";
-import getCurrent from "../../functions/GetCurrent";
+import { getCurrent } from "../../functions/GetCurrent";
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../../recoil/atoms";
 import "./Home.css";

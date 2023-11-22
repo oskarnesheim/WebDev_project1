@@ -2,13 +2,13 @@ import { useQuery } from "@tanstack/react-query";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { ICurrentWeatherData } from "../../../../public/interfaces/IWeatherAPI";
-import getCurrent from "../../../functions/GetCurrent";
 import {
   globalAdvancedState,
   measuringUnit,
   favoriteCities,
 } from "../../../recoil/atoms";
 import "./CurrentWeather.css";
+import { getCurrent } from "../../../functions/GetCurrent";
 
 type cityProps = {
   city: string;

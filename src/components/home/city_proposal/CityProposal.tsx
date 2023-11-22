@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import getSearch from "../../../functions/GetSearch";
 import ICity from "../../../../public/interfaces/CitySearch";
 import { useNavigate } from "react-router-dom";
 import "./CityProposal.css";
+import { getSearch } from "../../../functions/GetSearch";
 
 type CityProposalProps = {
   city: string;
@@ -31,27 +31,27 @@ function CityProposal({ city, setCity }: CityProposalProps) {
   if (isError) {
     return <div>{error.message}</div>;
   }
+  console.log(data);
 
   return (
     <div className="city-container">
-      {data &&
-        data.map((cityProposal) => (
-          <div
-            onClick={(e) => {
-              e.preventDefault();
-              setCity("");
-              navigate(`${cityProposal.url}/forecast`);
-            }}
-            className="city-item"
-            key={cityProposal.id}
-          >
-            <ul>
-              <li>{cityProposal.name}</li>
-              <li className="city-info">{cityProposal.region}</li>
-              <li className="city-info">{cityProposal.country}</li>
-            </ul>
-          </div>
-        ))}
+      {data.map((cityProposal) => (
+        <div
+          onClick={(e) => {
+            e.preventDefault();
+            setCity("");
+            navigate(`${cityProposal.url}/forecast`);
+          }}
+          className="city-item"
+          key={cityProposal.id}
+        >
+          <ul>
+            <li>{cityProposal.name}</li>
+            <li className="city-info">{cityProposal.region}</li>
+            <li className="city-info">{cityProposal.country}</li>
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
-import { forecastday } from "../../public/interfaces/IWeatherAPI";
+import { forecastday } from "../../../public/interfaces/IWeatherAPI";
 
 type forecastDayProps = {
   day: forecastday;

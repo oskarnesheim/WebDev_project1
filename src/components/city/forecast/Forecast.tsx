@@ -1,8 +1,8 @@
-import getForecast from "../../../functions/GetForecast";
 import { useQuery } from "@tanstack/react-query";
 import { IWeatherForeCastData } from "../../../../public/interfaces/IWeatherAPI";
 import ForecastDay from "./ForecastDay";
 import { useParams } from "react-router-dom";
+import { getForecast } from "../../../functions/GetForecast";
 
 /**
  * Forecast component
@@ -26,6 +26,7 @@ function Forecast() {
     return <div>We found this error... {error.message}</div>;
   }
 
+  console.log(data);
   return (
     <div>
       <h3>Next 3 days:</h3>

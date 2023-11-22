@@ -1,30 +1,17 @@
 import axios from "axios";
-import { ICurrentWeatherData } from "../../public/interfaces/IWeatherAPI";
-
-/**
- *  Get data from API
- * @param API_request
- * @returns
- */
-async function getData(API_request: string): Promise<ICurrentWeatherData> {
-  return await axios
-    .get(API_request)
-    .then((res) => res.data)
-    .catch((err) => console.log(err));
-}
+import { BASE_URL_CURRENT } from "../components/assets/APIUrl";
 
 /**
  * Get current weather data
  * @param city
  * @returns
  */
-function getCurrent(city: string) {
-  const WEATHER_REQUEST =
-    "http://api.weatherapi.com/v1/current.json?key=1413dd12c034448e8e894125230109&q=" +
-    city +
-    "&aqi=no";
+export async function getCurrent(city: string) {
+  const AIR_QUALITY = "no";
+  const WEATHER_REQUEST = BASE_URL_CURRENT + `&q=${city}}&aqi=${AIR_QUALITY}`;
 
-  const data: Promise<ICurrentWeatherData> = getData(WEATHER_REQUEST);
-  return data;
+  return await axios
+    .get(WEATHER_REQUEST)
+    .then((res) => res.data)
+    .catch((err) => console.log(err));
 }
-export default getCurrent;

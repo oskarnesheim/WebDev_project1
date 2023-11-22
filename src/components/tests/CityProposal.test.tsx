@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import CityProposal from "../home/city_proposal/CityProposal";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../../test/setup";
+import { queryClient } from "../../test-setup/setup";
 
 const CITY = "London";
 const SETCITY = vitest.fn();

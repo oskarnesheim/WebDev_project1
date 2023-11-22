@@ -29,7 +29,17 @@ To run the WeatherSearcher app on your local machine, follow these simple steps:
 
 # Testing
 
-Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have adopted a thorough testing approach that encompasses several vital aspects of our application, which include component testing, snapshot testing, and the strategic use of mock API calls.
+Ensuring the quality and reliability of WeatherSearcher is a top priority. To achieve this, we have adopted a thorough testing approach that encompasses several vital aspects of our application, which include component testing with mock API calls and snapshot testing.
+
+## Component Testing
+
+Here we test that the components render correctly and that the data is displayed as expected. We for example test that the search functionality works, loading of a city, forecast for a city and navbar.
+
+## Snapshot testing
+
+The snapshot tests check that the code for a component is the same as the last time the snapshot was taken. This is useful for detecting unexpected changes in the codebase.
+
+## Devices and Browsers
 
 In addition to standard testing, we've also paid special attention to responsiveness by conducting tests on a range of devices, including:
 
@@ -43,6 +53,8 @@ In addition to standard testing, we've also paid special attention to responsive
 Browser tested in:
 
 - Google Chrome
+- Safari
+- Firefox
 
 ## Running the Tests
 
@@ -73,6 +85,26 @@ With our robust testing approach, we aim to deliver a reliable and user-friendly
   ```
   npm run prettier-check
   ```
+
+## Linting
+
+- To check if the code is linted, open your terminal and run the following command:
+
+  ```
+  npm run lint
+  ```
+  
+# API
+
+We are using the [WeatherAPI](https://www.weatherapi.com/api-explorer.aspx#forecast) to get the weather data. The API is free to use, but we are limited to 3 days of forecast for any given location. We are using the following endpoints:
+
+- http://api.weatherapi.com/v1/current.json?key=1413dd12c034448e8e894125230109&q=" + city + "&aqi=no";
+  - Here we get the current weather for a given location.
+- "http://api.weatherapi.com/v1/forecast.json?key=1413dd12c034448e8e894125230109&q=" + city + "&days=" + numberOfDays + "&aqi=" + airQuality + "&alerts=" + allerts;
+  - Here we get the forecast for a given location. We are using 3 days as default, and we are not using airQuality or alerts.
+- "http://api.weatherapi.com/v1/search.json?key=1413dd12c034448e8e894125230109&q=" + "city";
+  - Here you do a fuzzy search for a given location. We are using this to get the search results. From the result of this you can select what city you want to get the forecast for.
+
 
 # Requirements
 
@@ -106,7 +138,7 @@ A user should be able to choose favorites by for example clicking on a star or a
 + Done
 ```
 
-**Commen:** A user can choose favorites by clicking on the star after the cityname. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.
+**Comment:** A user can choose favorites by clicking on the star after the cityname. The favorites will be saved in localstorage and will be available the next time the user visits the webpage.
 
 ```diff
 The page should be responsive and work well on both desktop and mobile devices.
@@ -154,6 +186,29 @@ The solution has responsive design.
 + Done
 ```
 
+# Filestructure
+
+In the root folder you will find the following folders:
+
+- **coverage**: Contains the test coverage report
+- **dist**: Contains the bundled code the is deployed to the server
+- **node_modules**: Contains all the dependencies
+- **public**: Contains the index.html file, interfaces and logo
+- **src**: Contains the source code
+
+In the src folder you will find the following folders:
+
+- **error**: Contains the error component
+- **functions**: Contains the functions used in the app. This includes API calls.
+- **mocks**: Contains the mock data used in the tests
+- **recoil**: Contains the recoil atoms.
+- **test-setup**: Contains the setup for the tests
+- **components**: Contains all the components for the application. The components are divided into folders based on their placement in the application. Here you find:
+- **home**: Contains the components for the home page
+- **city**: Contains the components for the city page
+- **navbar** Contains the components for the navbar
+- **tests**: Contains the tests for the application
+
 # Feedback :
 
 ### Code base
@@ -173,7 +228,7 @@ The solution has responsive design.
 **Solution:** We have added a togglebutton for sorting favorites in alphabetical order and by time added. We could have added more sorting options, but we have chosen to keep it simple for now.
 
 **Feedback:** Functionally a very good application, and the only thing that may be missing here is "paging back and forth", but again this is probably more a question of definition. <br>
-**Solution:** We have implemented paging back and forth between favorites by clicking on them in the favorites section. We have did not se the need for arrows to navigate between favorites, since we have a limited amount of favorites.
+**Solution:** We have implemented paging back and forth between favorites by clicking on them in the favorites section. We did not se the need for arrows to navigate between favorites, since we have a limited amount of favorites.
 
 **Feedback:** Maybe try to find a way to incorporate paging with arrows in the application? For example, a solution could have been to scroll between the days in a given city. <br>
 **Solution:** Since the API we are using only provides 3 days of forecast, we have chosen to show all 3 days at once (paging is not necessary with so few days ). But we will definitely consider this if we are going to expand the project.
@@ -195,7 +250,7 @@ The solution has responsive design.
 ### Documentation
 
 **Feedback:** The Documentation is lacking in both the readme and the codebase. The readme should contain more information about the file structure, what has been tested, and more information about the API. The codebase should contain more comments. <br>
-**Solution:** TODO @oskar . We have added comments to the codebase, and we have added more information to the readme.
+**Solution:** We have added information about the API, folderstructure and testting.
 
 **Feedback:** I miss a short documentation on what the different functions should take in and return, but with such small functions and good naming, it is actually zero problem. The rest of the documentation is good, but would like to see which browsers you have tested on, as it can affect the application. <br>
 **Solution:** Updated readme with browsers tested in.
