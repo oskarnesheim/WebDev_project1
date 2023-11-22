@@ -4,7 +4,7 @@ import { RecoilRoot } from "recoil";
 import { describe, expect, test } from "vitest";
 import City from "../city/City";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../../test/setup";
+import { queryClient } from "../../test-setup/setup";
 import userEvent from "@testing-library/user-event";
 
 describe("City", () => {

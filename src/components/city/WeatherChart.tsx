@@ -1,15 +1,25 @@
 import { useRef, useEffect } from "react";
 import Chart from "chart.js/auto";
-import { forecastday } from "../../public/interfaces/IWeatherAPI";
+import { forecastday } from "../../../public/interfaces/IWeatherAPI";
 
 type forecastDayProps = {
   day: forecastday;
 };
 //   export default function ForecastHours({ hours, preview }: forecastHourProps) {
+
+/**
+ * NB! This component is not used in the application because of library restrictions
+ * Function that takes in a date and returns the day of the week
+ * @param day
+ * @returns
+ */
 export default function WeatherChart({ day }: forecastDayProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   //   const [chartInstance, setChartInstance] = useState<Chart | null>(null);
 
+  /**
+   * useEffect to set the chart
+   */
   useEffect(() => {
     if (canvasRef.current) {
       const ctx = canvasRef.current.getContext("2d");

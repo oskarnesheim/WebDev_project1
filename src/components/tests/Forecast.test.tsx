@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import { describe, expect, test } from "vitest";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "../../test/setup";
+import { queryClient } from "../../test-setup/setup";
 import Forecast from "../city/forecast/Forecast";
 
 describe("City", () => {

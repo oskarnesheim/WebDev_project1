@@ -5,6 +5,9 @@ import "./Navbar.css";
 export default function MetricChooser() {
   const [metric, setMetric] = useRecoilState(measuringUnit);
 
+  /**
+   * useEffect to set the measuring unit
+   */
   function toggleMeasuringUnit() {
     setMetric(!metric);
     if (metric) {

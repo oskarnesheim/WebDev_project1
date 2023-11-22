@@ -9,6 +9,13 @@ type forecastHourProps = {
   count: number;
 };
 
+/**
+ * ForecastHours component
+ * @param hour : hour
+ * @param preview : boolean
+ * @param count : number
+ * @returns ForecastHours component
+ */
 export default function ForecastHours({
   hour,
   preview,
@@ -30,7 +37,7 @@ export default function ForecastHours({
               {!preview && (
                 <span className="additional-info">
                   UV {hour.uv} | {hour.wind_dir} |{" "}
-                  {(hour.wind_kph / 3.6).toPrecision(2)} M/s
+                  {(hour.wind_kph * 0.2778).toPrecision(2)} m/s
                 </span>
               )}
             </span>

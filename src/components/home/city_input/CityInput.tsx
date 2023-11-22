@@ -5,6 +5,12 @@ type CityInputProps = {
   currentSearch: string;
 };
 
+/**
+ * CityInput component that renders the input field for the city
+ * @param updateSearch : React.Dispatch<React.SetStateAction<string>>
+ * @param currentSearch : string
+ * @returns CityInput component
+ */
 function CityInput({ updateSearch, currentSearch }: CityInputProps) {
   return (
     <div className="input-container">

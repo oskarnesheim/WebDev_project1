@@ -1,28 +1,21 @@
 import axios from "axios";
-import { IWeatherForeCastData } from "../../public/interfaces/IWeatherAPI";
+import { BASE_URL_FORECAST } from "../components/assets/APIUrl";
 
-async function getData(API_request: string): Promise<IWeatherForeCastData> {
+/**
+ * Get forecast weather data
+ * @param city
+ * @returns
+ */
+export async function getForecast(city: string) {
+  const NUMBER_OF_DAYS = 10;
+  const AIR_QUALITY = "no";
+  const ALLERTS = "no";
+  const WEATHER_REQUEST =
+    BASE_URL_FORECAST +
+    `&q=${city}&days=${NUMBER_OF_DAYS}&aqi=${AIR_QUALITY}&alerts=${ALLERTS}`;
+
   return await axios
-    .get(API_request)
+    .get(WEATHER_REQUEST)
     .then((res) => res.data)
     .catch((err) => console.log(err));
 }
-
-function getForecast(city: string) {
-  const numberOfDays = 10;
-  const airQuality = true;
-  const allerts = true;
-  const WEATHER_REQUEST =
-    "http://api.weatherapi.com/v1/forecast.json?key=1413dd12c034448e8e894125230109&q=" +
-    city +
-    "&days=" +
-    numberOfDays +
-    "&aqi=" +
-    airQuality +
-    "&alerts=" +
-    allerts;
-
-  return getData(WEATHER_REQUEST);
-}
-
-export default getForecast;

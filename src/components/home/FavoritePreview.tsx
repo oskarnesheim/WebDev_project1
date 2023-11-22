@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { ICurrentWeatherData } from "../../../public/interfaces/IWeatherAPI";
-import getCurrent from "../../functions/GetCurrent";
+import { getCurrent } from "../../functions/GetCurrent";
 import { useRecoilState } from "recoil";
 import { measuringUnit } from "../../recoil/atoms";
 import "./Home.css";
@@ -10,6 +10,11 @@ type FavoritePreviewProps = {
   city: string;
 };
 
+/**
+ * FavoritePreview component that take in a city and renders a preview of the city
+ * @param city : string
+ * @returns FavoritePreview component
+ */
 export default function FavoritePreview({ city }: FavoritePreviewProps) {
   const [metric] = useRecoilState(measuringUnit);
   const navigate = useNavigate();
